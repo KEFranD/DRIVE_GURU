@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_05_133049) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_06_110343) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,12 +46,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_05_133049) do
     t.datetime "starting_time"
     t.datetime "end_time"
     t.date "date"
-    t.bigint "student_id", null: false
-    t.bigint "teacher_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "instructor_id", null: false
+    t.index ["instructor_id"], name: "index_bookings_on_instructor_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "instructors", force: :cascade do |t|
+    t.string "location"
+    t.string "car_transmission"
+    t.bigint "user_id", null: false
+    t.text "description"
+    t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["student_id"], name: "index_bookings_on_student_id"
-    t.index ["teacher_id"], name: "index_bookings_on_teacher_id"
+    t.index ["user_id"], name: "index_instructors_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -71,13 +80,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_05_133049) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone_number"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "users", column: "student_id"
-  add_foreign_key "bookings", "users", column: "teacher_id"
+  add_foreign_key "bookings", "instructors"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "instructors", "users"
   add_foreign_key "reviews", "bookings"
 end
