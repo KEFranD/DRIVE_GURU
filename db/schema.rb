@@ -42,6 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_05_133049) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.datetime "starting_time"
