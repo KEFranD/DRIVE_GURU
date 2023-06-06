@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema[7.0].define(version: 2023_06_05_133049) do
-
+ActiveRecord::Schema[7.0].define(version: 2023_06_06_110343) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_05_133049) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.datetime "starting_time"
@@ -72,6 +71,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_05_133049) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone_number"
+    t.boolean "teacher_role"
+    t.string "car_transmission"
+    t.string "location"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
