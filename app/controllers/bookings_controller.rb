@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_user, only: %i[new create]
   def new
     @user = User.new(params[:id])
+    @instructor = Instructor.new(params[:id])
     @booking = Booking.new
   end
 
