@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   get 'reviews/new'
   resources :reviews, only: [:new, :create]
-  end
+
   resources :reviews, only: [:destroy]
-  end
 end
