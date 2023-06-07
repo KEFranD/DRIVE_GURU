@@ -6,9 +6,9 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.instructor = @instructor
+    @review.user = @user
     if @review.save
-      redirect_to instructor_path(@instructor)
+      redirect_to user_path(@user)
     else
       render :new, status: :unprocessable_entity
     end
@@ -17,13 +17,13 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to instructor_path(@review.instructor), status: :see_other
+    redirect_to user_path(@review.user), status: :see_other
   end
 
   private
 
-  def set_instructor
-    @instructor = Instructor.find(params[:instructor_id])
+  def set_user
+    @user = User.find(params[:user_id])
   end
 
   def review_params

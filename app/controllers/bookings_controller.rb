@@ -16,7 +16,8 @@ class BookingsController < ApplicaionController
 
   def create
     @booking = Booking.new(booking_params)
-    @user = User.find(params[:instructor_id])
+    
+    @user = User.find(params[:user_id])
 
     @booking.user = @user
     # @booking.instructor = @instructor
@@ -39,6 +40,6 @@ class BookingsController < ApplicaionController
   # end
 
   def booking_params
-    params.require(:booking).permit(:start_time, :finish_time, :date)
+    params.require(:booking).permit(:date)
   end
 end
