@@ -3,5 +3,15 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+#   movies = Movie.create([{ name: “Star Wars” }, { name: “Lord of the Rings” }])
+#   Character.create(name: “Luke”, movie: movies.first)
+puts "Creating instructor1..."
+instructor1 = Instructor.create(
+  user_id: 
+  first_name: "John",
+  last_name: "Doe",
+  phone_number: 532,
+  location: "Moka",
+  car_transmission: "Automatique"
+)
+puts "Instructor1 has been created succesfully !"

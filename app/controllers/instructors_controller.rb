@@ -1,11 +1,9 @@
 class InstructorsController < ApplicationController
   before_action :set_instructor, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[index show edit update destroy create new]
 
   def index
     @instructors = Instructor.all
-    if params[:query].present?
-      @instructors = @instructors.where("title ILIKE ?", "%#{params[:query]}%")
-    end
   end
 
   def show; end
@@ -17,7 +15,7 @@ class InstructorsController < ApplicationController
   def create
     @instructor = Instructor.new(instructor_params)
     if @instructor.save
-      redirect_to @instructor, notice: "Instructor was successfully created."
+      redirect_to instructors_path(@instructor)
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,8 +32,8 @@ class InstructorsController < ApplicationController
   end
 
   def destroy
-    @restaurant.destroy
-    redirect_to restaurants_url, notice: "Restaurant was successfully destroyed."
+    @instructor.destroy
+    redirect_to instructors_url, notice: "Instructor was successfully destroyed."
   end
 
   private
@@ -45,6 +43,6 @@ class InstructorsController < ApplicationController
   end
 
   def instructor_params
-    params.require(:instructor).permit(:first_name, :last_name, :location, :car_transmission)
+    params.require(:instructor).permit(:first_name, :last_name, :phone_number, :location, :car_transmission)
   end
 end

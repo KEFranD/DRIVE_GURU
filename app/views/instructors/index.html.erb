@@ -1,0 +1,10 @@
+<h1>Hello</h1>
+<ul>
+  <% @instructors.each do |instructor| %>
+    <li><%= instructor.first_name %></li>
+    <li><%= instructor.last_name %></li>
+    <li><%= instructor.phone_number %></li>
+    <li><%= instructor.location %></li>
+    <li><%= instructor.car_transmission %></li>
+  <% end %>
+</ul>
