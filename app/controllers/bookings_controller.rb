@@ -16,9 +16,11 @@ class BookingsController < ApplicaionController
 
   def create
     @booking = Booking.new(booking_params)
+    
     @user = User.find(params[:user_id])
 
     @booking.user = @user
+    # @booking.instructor = @instructor
 
     if @booking.save
       redirect_to @booking, notice: 'Booking was successfully created.'
@@ -32,6 +34,10 @@ class BookingsController < ApplicaionController
   def set_user
     @user = User.find(params[:user_id])
   end
+
+  # def set_bookings
+  #   @booking = Instructor.find(params[:_id])
+  # end
 
   def booking_params
     params.require(:booking).permit(:date)
