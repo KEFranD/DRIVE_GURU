@@ -27,3 +27,4 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:start_time, :finish_time, :date)
   end
 end
+
