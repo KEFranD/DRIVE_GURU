@@ -1,0 +1,20 @@
+<h1>Edit Booking</h1>
+
+<%= form_with(model: @booking, url: booking_path(@booking), method: :patch) do |form| %>
+  <%= form.label :date %>
+  <%= form.date_field :date %>
+
+  <%= form.label :user_id, "User" %>
+  <%= form.collection_select :user_id, User.all, :id, :email %>
+
+  <%= form.label :car_transmission %>
+  <%= form.text_field :car_transmission %>
+
+  <%= form.label :time %>
+  <%= form.text_field :time %>
+
+  <%= form.label :booked_user_id, "Booked User" %>
+  <%= form.collection_select :booked_user_id, User.all, :id, :email %>
+
+  <%= form.submit "Update Booking" %>
+<% end %>
