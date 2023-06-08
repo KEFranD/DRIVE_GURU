@@ -1,0 +1,19 @@
+<h1>New Booking</h1>
+
+<%= form_with(model: @booking, url: bookings_path, method: :post) do |form| %>
+  <%= form.label :date %>
+  <%= form.date_field :date %>
+
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+  <%= form.label :car_transmission %>
+  <%= form.select :car_transmission, ['Automatic', 'Manual', 'Hybrid'] %>
+
+  <%= form.label :time %>
+  <%= form.select :time, [['30m', '30 minutes'], ['1h', '1 hour'], ['2h', '2 hours']] %>
+
+  <%= form.label :booked_user_id, "Instructor" %>
+  <%= form.collection_select :booked_user_id, User.where(instructor: true), :id, :full_name %>
+
+  <%= form.submit "Create Booking" %>
+<% end %>

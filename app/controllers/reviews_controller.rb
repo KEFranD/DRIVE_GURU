@@ -1,32 +1,47 @@
 class ReviewsController < ApplicationController
+  before_action :set_review, only: [:edit, :update, :destroy]
 
   def new
+    # Code to create a new review instance
     @review = Review.new
   end
 
   def create
+    # Code to create a new review with the provided parameters
     @review = Review.new(review_params)
-    @review.user = @user
     if @review.save
-      redirect_to user_path(@user)
+      redirect_to booking_path(@review.booking_id), notice: "Review was successfully created."
     else
-      render :new, status: :unprocessable_entity
+      render :new
+    end
+  end
+
+  def edit
+    # Code to edit a specific review
+  end
+
+  def update
+    # Code to update a specific review with the provided parameters
+    if @review.update(review_params)
+      redirect_to booking_path(@review.booking_id), notice: "Review was successfully updated."
+    else
+      render :edit
     end
   end
 
   def destroy
-    @review = Review.find(params[:id])
+    # Code to delete a specific review
     @review.destroy
-    redirect_to user_path(@review.user), status: :see_other
+    redirect_to booking_path(@review.booking_id), notice: "Review was successfully deleted."
   end
 
   private
 
-  def set_user
-    @user = User.find(params[:user_id])
+  def set_review
+    @review = Review.find(params[:id])
   end
 
   def review_params
-    params.require(:review).permit(:description, :rating)
+    params.require(:review).permit(:rating, :description, :booking_id)
   end
 end
