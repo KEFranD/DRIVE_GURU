@@ -1,13 +1,15 @@
-<h1>New Review</h1>
+<div class='container'>
+<h1 class='text-center'>New Review</h1>
 
-<%= form_with(model: @review, url: reviews_path, method: :post) do |form| %>
+<%= form_with(model: @review, url: new_user_review_path, method: :post) do |form| %>
   <%= form.label :rating %>
   <%= form.text_field :rating %>
 
   <%= form.label :description %>
   <%= form.text_field :description %>
 
-  <%= form.hidden_field :booking_id, value: @booking.id %>
+  <%# <%= form.hidden_field :booking_id, value: @booking.id %> 
 
   <%= form.submit "Create Review" %>
 <% end %>
+</div>
