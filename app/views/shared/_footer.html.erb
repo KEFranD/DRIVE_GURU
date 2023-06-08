@@ -1,5 +1,15 @@
-<div class="navbar">
-  <a href="/">Home</a>
-  <a href="/bookings">Bookings</a>
-  <%= link_to "Profile", user_path(current_user) %>
-</div>
+<footer class="footer" style="background-color: orange;">
+  <div class="navbar">
+    <a href="/">
+      <i class="fas fa-home white-icon"></i>
+    </a>
+    <a href="/bookings">
+      <i class="fas fa-calendar-alt white-icon"></i>
+    </a>
+    <%# <a href="/chatroom">
+    </a> %>
+    <%= link_to user_path(current_user) do %>
+      <i class="fas fa-user white-icon"></i>
+    <% end %>
+  </div>
+</footer>
