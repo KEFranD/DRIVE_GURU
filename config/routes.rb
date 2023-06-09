@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :instructors, only: [:new, :create, :index, :show] do
-    resources :bookings, only: [:create]
+    resources :bookings, only: [:new, :create]
 
   end
 

@@ -1,7 +1,7 @@
 <div class='container  bg-secondary-subtle col-10 my-5 rounded'>
   <h1 class='text-center py-3'>New Booking</h1>
     <div class='container'>
-      <%= form_with(model: @booking, url: bookings_path, method: :post) do |form| %>
+      <%= form_with(model: @booking, url: new_instructor_booking_path, method: :post) do |form| %>
       <div class='row px-4 mb-3'>
           <div class='container text-center rounded py-1', style='background-color:#FFE500'>
             <%= form.label :date %>
