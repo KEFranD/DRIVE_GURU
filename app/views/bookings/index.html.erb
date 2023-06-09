@@ -3,10 +3,8 @@
 <% @bookings.each do |booking| %>
   <div>
     <p>Date: <%= booking.date %></p>
-    <p>User: <%= booking.booker.email %></p>
-    <p>Car Transmission: <%= booking.car_transmission %></p>
     <p>Time: <%= booking.time %></p>
-    <p>Booked User: <%= booking.booked_user.email %></p>
+    <p>Booked Instructor: <%= booking.instructor_id.email %></p>
     <hr>
   </div>
 <% end %>
