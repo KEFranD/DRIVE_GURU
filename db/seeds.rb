@@ -12,29 +12,26 @@ user1 = User.create(
   last_name: "Doe",
   email: "johndoe@mail.com",
   phone_number: 9874532,
-  instructor: true,
-  location: "Port Louis",
   password: 123456
-)
-
-user2 = User.create(
-  first_name: "Joel",
-  last_name: "Do",
-  email: "joedoe@mail.com",
-  phone_number: 9874123,
-  location: "Moka",
-  instructor: true,
-  password: 123456
-)
-
-user3 = User.create(
-  first_name: "Jane",
-  last_name: "Does",
-  email: "janedoe@mail.com",
-  phone_number: 9874123,
-  location: "St Pierre",
-  instructor: false,
-  password: 123123
 )
 
 puts "User1 has been created succesfully !"
+
+puts "Creating instructor1..."
+
+instructor1 = Instructor.create(
+  company_name: "Roulé",
+  location: "Moka",
+  car_transmission: "automatique",
+  work_phone_number: 84939392
+)
+puts "Instructor1 has been created succesfully !"
+
+puts "Creating booking1..."
+
+booking1 = Booking.create(
+  date:
+  time_slot:
+  user_id:
+  instructor_id:
+)
