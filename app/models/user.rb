@@ -1,7 +1,4 @@
 class User < ApplicationRecord
-  geocoded_by :location
-  after_validation :geocode, if: :will_save_change_to_location?
-
   # Bookings made by this user
   has_many :bookings, foreign_key: :booker_id, class_name: 'Booking'
 
@@ -16,6 +13,8 @@ class User < ApplicationRecord
 
   # Messages received by this user
   has_many :received_messages, foreign_key: :receiver_id, class_name: 'Message'
+
+  has_one :instructor
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

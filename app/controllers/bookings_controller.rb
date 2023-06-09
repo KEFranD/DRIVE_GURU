@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  before_action :set_instructor, only: [:show, :edit, :update, :destroy]
 
   def index
     # Code to fetch and display all bookings
@@ -52,8 +52,8 @@ class BookingsController < ApplicationController
     "#{hours.to_i} hours #{minutes.to_i} minutes"
   end
 
-  def set_booking
-    @booking = Booking.find(params[:id])
+  def set_instructor
+    @instructor = Instructor.find(params[:instructor_id])
   end
 
   def booking_params
