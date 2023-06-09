@@ -1,3 +1,50 @@
+
+<style>
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.search-bar {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: -40px;
+}
+
+.search-bar input[type="text"] {
+  padding: 10px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.center-image {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.center-image img {
+  max-width: 100%;
+  height: 350px;
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+</style>
+=======
  <style>
     .container {
       max-width: 800px;
@@ -45,18 +92,22 @@
       margin-bottom: 10px;
     }
   </style>
+
 </head>
+
 <body>
   <div class="container">
     <h1>Welcome to DriveGuru</h1>
-    <%# <%= form_tag(pages_index_path, method: 'get') do %>
-      <%# <div class="search-bar"> %>
-        <%# <%= text_field_tag(:query, params[:query], placeholder: 'Search by location...') %>
-        <%# <%= submit_tag('Search') %>
-      <%# </div> %>
-    <%# <% end %>
+
+    <div class="search-bar">
+    </div>
+      <input type="text" placeholder="Search..." />
+      <input type="submit" value="Search" class="btn btn-primary" />
+      
     <div class="center-image">
-      <img src="https://res.cloudinary.com/dblraorbo/image/upload/v1686165364/Drive%20Guru/hello_drive_3.gif" alt="App Image" />
+      <img src="https://res.cloudinary.com/dblraorbo/image/upload/v1686165364/Drive%20Guru/hello_drive_3.gif" alt="App Image"/>
+
+   
     </div>
   </div>
 </body>

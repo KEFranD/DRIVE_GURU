@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+  get "checkout", to: "pages#checkout"
+  get "status", to: "pages#status"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
+
   resources :bookings, only: [] do
     resources :reviews, only: [:new, :create, :edit, :update]
   end
@@ -15,7 +18,7 @@ Rails.application.routes.draw do
 
   resources :instructors, only: [:new, :create, :index, :show] do
     resources :bookings, only: [:create]
+
   end
 
-  resources :messages, only: [:index, :create]
 end
