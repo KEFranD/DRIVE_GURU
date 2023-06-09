@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:edit, :update, :destroy]
+  before_action :set_booking, only: %i[new create]
 
   def new
     # Code to create a new review instance
@@ -9,8 +10,10 @@ class ReviewsController < ApplicationController
   def create
     # Code to create a new review with the provided parameters
     @review = Review.new(review_params)
+
+    @review.booking = @booking
     if @review.save
-      redirect_to booking_path(@review.booking_id), notice: "Review was successfully created."
+      redirect_to instructor_path(@booking.instructor), notice: "Review was successfully created."
     else
       render :new
     end
@@ -41,7 +44,11 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 
+  def set_booking
+    @booking = Booking.find(params[:booking_id])
+  end
+
   def review_params
-    params.require(:review).permit(:rating, :description, :booking_id)
+    params.require(:review).permit(:rating, :description)
   end
 end
