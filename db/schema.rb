@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_07_221617) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_09_113447) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -45,14 +45,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_221617) do
   create_table "bookings", force: :cascade do |t|
     t.date "date"
     t.bigint "user_id", null: false
-    t.string "car_transmission"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "booked_user_id", null: false
-    t.bigint "booker_id", null: false
     t.string "time"
-    t.index ["booked_user_id"], name: "index_bookings_on_booked_user_id"
-    t.index ["booker_id"], name: "index_bookings_on_booker_id"
+    t.bigint "instructor_id", null: false
+    t.index ["instructor_id"], name: "index_bookings_on_instructor_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -60,6 +57,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_221617) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "instructors", force: :cascade do |t|
+    t.string "company_name"
+    t.string "car_transmission"
+    t.integer "work_phone_number"
+    t.string "address"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.index ["user_id"], name: "index_instructors_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -75,7 +85,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_221617) do
   create_table "reviews", force: :cascade do |t|
     t.string "rating"
     t.string "description"
-    t.bigint "booking_id", null: false
+    t.bigint "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_reviews_on_booking_id"
@@ -92,17 +102,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_221617) do
     t.string "first_name"
     t.string "last_name"
     t.integer "phone_number"
-    t.boolean "instructor"
-    t.string "location"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "instructors"
   add_foreign_key "bookings", "users"
-  add_foreign_key "bookings", "users", column: "booked_user_id"
-  add_foreign_key "bookings", "users", column: "booker_id"
+  add_foreign_key "instructors", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "reviews", "bookings"

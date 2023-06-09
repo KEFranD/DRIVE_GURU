@@ -1,0 +1,25 @@
+.footer {
+  background-color: #FF7A00;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer .navbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer .navbar a {
+  margin: 0 30px;
+}
+
+.footer .navbar a i {
+  font-size: 20px;
+}
+
+.footer .white-icon {
+  color: white;
+}
