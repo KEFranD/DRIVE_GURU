@@ -12,29 +12,64 @@ user1 = User.create(
   last_name: "Doe",
   email: "johndoe@mail.com",
   phone_number: 9874532,
-  instructor: true,
-  location: "Port Louis",
   password: 123456
 )
+puts "User1 has been created succesfully !"
+
+puts "Creating user2..."
 
 user2 = User.create(
-  first_name: "Joel",
-  last_name: "Do",
-  email: "joedoe@mail.com",
-  phone_number: 9874123,
-  location: "Moka",
-  instructor: true,
+  first_name: "Mario",
+  last_name: "Bro",
+  email: "mariobro@mail.com",
+  phone_number: 5478390,
   password: 123456
 )
+puts "User2 has been created succesfully !"
 
-user3 = User.create(
-  first_name: "Jane",
-  last_name: "Does",
-  email: "janedoe@mail.com",
-  phone_number: 9874123,
-  location: "St Pierre",
-  instructor: false,
-  password: 123123
+puts "Creating instructor1..."
+
+instructor1 = Instructor.create(
+  company_name: "Roulé",
+  address: "Moka",
+  car_transmission: "automatique",
+  work_phone_number: 84939392,
+  user_id: 1
 )
 
-puts "User1 has been created succesfully !"
+puts "Instructor1 has been created succesfully !"
+
+# puts "Creating instructor2..."
+
+# instructor2 = Instructor.create(
+#   company_name: "TamMam",
+#   address: "Tamarin",
+#   car_transmission: "manuel",
+#   work_phone_number: 84938447,
+#   user_id: 1
+# )
+
+# puts "Instructor2 has been created succesfully !"
+
+puts "Creating instructor3..."
+
+instructor3 = Instructor.create(
+  company_name: "Jeannine",
+  address: "Paris",
+  car_transmission: "automatique",
+  work_phone_number: 94983493,
+  user_id: 1
+)
+
+puts "Instructor3 has been created succesfully !"
+
+puts "Creating booking1..."
+
+booking1 = Booking.create(
+  date:
+  time_slot:
+  user_id:
+  instructor_id:
+)
+
+puts "Booking1 has been created succesfully !"
