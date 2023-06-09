@@ -17,6 +17,16 @@ user1 = User.create(
 
 puts "User1 has been created succesfully !"
 
+user2 = User.create(
+  first_name: "Mario",
+  last_name: "Bro",
+  email: "mariobro@mail.com",
+  phone_number: 5478390,
+  password: 123456
+)
+
+puts "User2 has been created succesfully !"
+
 puts "Creating instructor1..."
 
 instructor1 = Instructor.create(
