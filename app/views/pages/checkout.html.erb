@@ -1,28 +1,37 @@
 <div class="container d-flex flex-column gap-5 mx-auto text-center">
-  <div class="checkout_banner">
-<div class="text-overlay">
-Checkout
+  <div class="card checkout-card">
+    <%# <div class="card-header"> %>
+      Checkout
+    </div>
+    <div class="card-body">
+      <form class="row g-3">
+        <div class="tarif">
+          <p>Each 30m - RS500</p>
+          <p>Each 1H - RS1000</p>
+          <p>Each 2H - RS2000</p>
+        </div>
+
+        <div class="payment-container">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" id="cash" name="paymentMethod" value="cash">
+            <label class="form-check-label" for="cash">Cash on Delivery</label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" id="card" name="paymentMethod" value="card">
+            <label class="form-check-label" for="card">Card Payment</label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" id="juice" name="paymentMethod" value="juice">
+            <label class="form-check-label" for="juice">Juice</label>
+          </div>
+        </div>
+
+        <div class="btn-container">
+          <a href="/status" class="btn btn-warning">Checkout</a>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
-<form class="row g-3">
-  <div class="tarif">
-    <p>Each 30m - RS500</p>
-    <p>Each 1H - RS1000</p>
-    <p>Each 2H - RS2000</p>
-  </div>
-
-  <div class="payment-container">
-    <input type="radio" id="cash" name="fav_language" value="cash">
-    <label for="cash">Cash on delivery</label><br>
-
-    <input type="radio" id="card" name="fav_language" value="card">
-    <label for="card">Card Payment</label><br>
-
-    <input type="radio" id="juice" name="fav_language" value="juice">
-    <label for="juice">Juice</label>
-  </div>
-
-  <div class="btn-container">
-    <%= link_to "Checkout", "/status", class: "btn btn-primary" %>
-  </div>
-</div>
-</form>
