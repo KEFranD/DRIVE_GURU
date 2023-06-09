@@ -44,54 +44,6 @@ h1 {
   margin-bottom: 10px;
 }
 </style>
-=======
- <style>
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      text-align: center;
-      position: relative;
-    }
-
-    .search-bar {
-      margin-bottom: 20px;
-      position: absolute;
-      top: 120px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1;
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 10px;
-      border-radius: 5px;
-    }
-
-    .search-bar input[type="text"] {
-      padding: 8px;
-      width: 250px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-    }
-
-    .center-image {
-      text-align: center;
-      margin-top: 80px;
-    }
-
-
-    .center-image img {
-      max-width: 100%;
-      /* height: auto; */
-      height: 350px;
-      border-radius: 5px;
-    }
-
-    h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-  </style>
 
 </head>
 
@@ -100,14 +52,15 @@ h1 {
     <h1>Welcome to DriveGuru</h1>
 
     <div class="search-bar">
-    </div>
-      <input type="text" placeholder="Search..." />
-      <input type="submit" value="Search" class="btn btn-primary" />
-      
+    <%= form_tag search_instructors_path, method: :get do %>
+    <%= text_field_tag :address, params[:address], placeholder: 'Search...' %>
+    <%= submit_tag 'Search', class: 'btn btn-primary' %>
+    <% end %>
+
     <div class="center-image">
       <img src="https://res.cloudinary.com/dblraorbo/image/upload/v1686165364/Drive%20Guru/hello_drive_3.gif" alt="App Image"/>
 
-   
+
     </div>
   </div>
 </body>

@@ -3,14 +3,12 @@
 <p><strong>Name:</strong> <%= @user.full_name %></p>
 <p><strong>Email:</strong> <%= @user.email %></p>
 <p><strong>Phone Number:</strong> <%= @user.phone_number %></p>
-<p><strong>Location:</strong> <%= @user.location %></p>
+<p><strong>Address:</strong> <%= @user.address %></p>
 
 <div style="width: 80%; height: 250px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-
-<p><strong>Instructor:</strong> <%= @user.instructor? ? 'Yes' : 'No' %></p>
 
 <%# <%= link_to "Edit Profile", edit_user_registration_path(params[:id]), class: "btn btn-primary" %> %>
