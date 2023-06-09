@@ -2,12 +2,10 @@ class BookingsController < ApplicationController
   before_action :set_instructor, only: [:show, :edit, :update, :destroy]
 
   def index
-    # Code to fetch and display all bookings
     @bookings = current_user.bookings
   end
 
   def new
-    # Code to create a new booking instance
     @booking = Booking.new
   end
 
@@ -24,7 +22,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    # Code to fetch and display a specific booking
+    @booking = Booking.find(params[:user_id])
   end
 
   def edit
@@ -32,7 +30,6 @@ class BookingsController < ApplicationController
   end
 
   def update
-    # Code to update a specific booking with the provided parameters
     if @booking.update(booking_params)
       redirect_to booking_path(@booking), notice: "Booking was successfully updated."
     else
@@ -41,7 +38,6 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    # Code to delete a specific booking
     @booking.destroy
     redirect_to bookings_path, notice: "Booking was successfully deleted."
   end
