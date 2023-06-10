@@ -1,33 +1,56 @@
-<div class='container bg-secondary-subtle col-10 my-5 rounded'>
-  <h1 class='text-center py-3'>New Booking</h1>
-  <div class='container'>
-    <%= simple_form_for @booking, url: instructor_bookings_path(@instructor) do |form| %>
-      <div class='row px-4 mb-3'>
-        <div class='container text-center rounded py-1', style='background-color:#FFE500'>
-          <%= form.input :date, as: :date_picker %>
-        </div>
-      </div>
-      <%= form.hidden_field :user_id, value: current_user.id %>
-      <div class='row px-4 mb-3'>
-        <div class='container text-center rounded py-1', style='background-color:#FFE500'>
-          <%= form.input :car_transmission, collection: ['Automatic', 'Manual'], prompt: 'Select car transmission' %>
-        </div>
-      </div>
-      <div class='row px-4 mb-3'>
-        <div class='container text-center rounded py-1', style='background-color:#FFE500'>
-          <%= form.input :time, collection: [['30m', '30 minutes'], ['1h', '1 hour'], ['2h', '2 hours']], prompt: 'Select time' %>
-        </div>
-      </div>
-      <div class='row px-4 mb-3 pb-4'>
-        <div class='container text-center rounded py-1', style='background-color:#FFE500'>
-          <%= form.label :booked_user_id, "Instructor" %>
-          <br>
-          <%= form.collection_select :booked_user_id, User.where(instructor: true), :id, :full_name, prompt: 'Select instructor' %>
-        </div>
-      </div>
-      <div class='text-center'>
-        <%= form.button :submit, "Create Booking", class: 'btn btn-primary', style: 'width: 100%; background-color: #FF7A00' %>
-      </div>
-    <% end %>
+<style>
+  .new-booking-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-actions {
+    margin-top: 20px;
+  }
+</style>
+
+<h1 class="new-booking-title">New Booking</h1>
+
+<%= simple_form_for(@booking) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.label :date, class: "form-label" %>
+    <%= f.input :date, as: :string, input_html: { class: "form-control", type: "date" } %>
+
+    <%= f.label :From, class: "form-label" %>
+    <%= f.time_select :time, { class: "form-control", minute_step: 15, start_hour: 7, end_hour: 17 }, { prompt: true } %>
+
+    <%= f.label :To, class: "form-label" %>
+    <%= f.time_select :time, { class: "form-control", minute_step: 15, start_hour: 7, end_hour: 18 }, { prompt: true } %>
+
+    <div class="form-group">
+      <label class="form-label">Car Transmission</label>
+      <p class="form-control-static"><%= @instructor.car_transmission %></p>
+    </div>
+
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :instructor_id, value: @instructor.id %>
   </div>
-</div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>

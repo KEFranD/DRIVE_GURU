@@ -7,9 +7,8 @@ class BookingsController < ApplicationController
   end
 
   def new
-    # Code to create a new booking instance
-    @instructor = Instructor.find(params[:instructor_id])
     @booking = Booking.new
+    @instructor = Instructor.find(params[:instructor_id])
   end
 
   def create
@@ -58,6 +57,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date, :user_id, :car_transmission, :time, :booked_user_id)
+    params.require(:booking).permit(:date, :user_id, :time, :instructor_id)
   end
 end
