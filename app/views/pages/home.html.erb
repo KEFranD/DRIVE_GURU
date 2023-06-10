@@ -51,11 +51,7 @@ h1 {
   <div class="container">
     <h1>Welcome to DriveGuru</h1>
 
-    <div class="search-bar">
-    <%= form_tag search_instructors_path, method: :get do %>
-    <%= text_field_tag :address, params[:address], placeholder: 'Search...' %>
-    <%= submit_tag 'Search', class: 'btn btn-primary' %>
-    <% end %>
+    <a href="/instructors" class="explore-button">Check our Instructors</a>
 
     <div class="center-image">
       <img src="https://res.cloudinary.com/dblraorbo/image/upload/v1686165364/Drive%20Guru/hello_drive_3.gif" alt="App Image"/>
