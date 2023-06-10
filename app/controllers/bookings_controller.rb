@@ -3,7 +3,8 @@ class BookingsController < ApplicationController
 
   def index
     # Code to fetch and display all bookings
-    @bookings = current_user.bookings
+    @user = current_user
+    @bookings = @user.user_bookings
   end
 
   def new

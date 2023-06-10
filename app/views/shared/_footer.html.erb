@@ -3,13 +3,13 @@
     <a href="/">
       <i class="fas fa-home white-icon"></i>
     </a>
-    <a href="/bookings">
+    <%= link_to bookings_path do %>
       <i class="fas fa-calendar-alt white-icon"></i>
-    </a>
-    <%# <a href="/chatroom">
-    </a> %>
-    <a href="#">
-      <i class="fas fa-user white-icon"></i>
-    </a>
+    <% end %>
+    <% if current_user.present? %>
+      <%= link_to user_path(current_user) do %>
+        <i class="fas fa-user white-icon"></i>
+      <% end %>
+    <% end %>
   </div>
 </footer>
