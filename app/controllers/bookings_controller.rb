@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
 
   def new
     # Code to create a new booking instance
+    @instructor = Instructor.find(params[:instructor_id])
     @booking = Booking.new
   end
 

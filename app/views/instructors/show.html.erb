@@ -2,3 +2,8 @@
 <p><strong>Car Transmission:</strong> <%= @instructor.car_transmission %></p>
 <p><strong>Work Phone Number:</strong> <%= @instructor.work_phone_number %></p>
 <p><strong>Region:</strong> <%= @instructor.address %></p>
+
+<!-- Your booking form code goes here -->
+
+<%= link_to "Book Now", new_booking_path(instructor_id: @instructor.id), class: "btn btn-primary" %>
+<%= link_to "Back to Instructors", instructors_path, class: "btn btn-primary" %>

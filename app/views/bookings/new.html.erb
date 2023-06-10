@@ -1,41 +1,33 @@
-<div class='container  bg-secondary-subtle col-10 my-5 rounded'>
+<div class='container bg-secondary-subtle col-10 my-5 rounded'>
   <h1 class='text-center py-3'>New Booking</h1>
-    <div class='container'>
-      <%= form_with(model: @booking, url: new_instructor_booking_path, method: :post) do |form| %>
+  <div class='container'>
+    <%= simple_form_for @booking, url: instructor_bookings_path(@instructor) do |form| %>
       <div class='row px-4 mb-3'>
-          <div class='container text-center rounded py-1', style='background-color:#FFE500'>
-            <%= form.label :date %>
-            <br>
-            <%= form.date_field :date %>
-          </div>
+        <div class='container text-center rounded py-1', style='background-color:#FFE500'>
+          <%= form.input :date, as: :date_picker %>
+        </div>
       </div>
       <%= form.hidden_field :user_id, value: current_user.id %>
       <div class='row px-4 mb-3'>
         <div class='container text-center rounded py-1', style='background-color:#FFE500'>
-          <%= form.label :car_transmission %>
-          <br>
-          <%= form.select :car_transmission, ['Automatic', 'Manual'] %>
+          <%= form.input :car_transmission, collection: ['Automatic', 'Manual'], prompt: 'Select car transmission' %>
         </div>
       </div>
       <div class='row px-4 mb-3'>
         <div class='container text-center rounded py-1', style='background-color:#FFE500'>
-          <%= form.label :time %>
-          <br>
-          <%= form.select :time, [['30m', '30 minutes'], ['1h', '1 hour'], ['2h', '2 hours']] %>
+          <%= form.input :time, collection: [['30m', '30 minutes'], ['1h', '1 hour'], ['2h', '2 hours']], prompt: 'Select time' %>
         </div>
       </div>
       <div class='row px-4 mb-3 pb-4'>
         <div class='container text-center rounded py-1', style='background-color:#FFE500'>
           <%= form.label :booked_user_id, "Instructor" %>
           <br>
-          <%= form.collection_select :booked_user_id, User.where(instructor: true), :id, :full_name %>
+          <%= form.collection_select :booked_user_id, User.where(instructor: true), :id, :full_name, prompt: 'Select instructor' %>
         </div>
       </div>
-    </div>
-</div>
-<div class='container'>
-      <div class="mx-auto p-2" style="width: 200px;">
-        <%= form.submit "Create Booking", class:'btn btn-primary', style:'width: 100%; background-color: #FF7A00' %>
-      <% end %>
+      <div class='text-center'>
+        <%= form.button :submit, "Create Booking", class: 'btn btn-primary', style: 'width: 100%; background-color: #FF7A00' %>
       </div>
+    <% end %>
+  </div>
 </div>
