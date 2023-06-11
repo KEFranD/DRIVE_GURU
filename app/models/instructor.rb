@@ -5,5 +5,5 @@ class Instructor < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
 
-  attribute :car_transmission
+  serialize :car_transmission, Array
 end
