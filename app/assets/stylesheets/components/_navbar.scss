@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: transparent; /* Set the background to transparent */
+  box-shadow: none; /* Remove any box shadow */
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +9,9 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 30%;
+  width: 30%; /* Set the width of the logo to 100% */
+}
+
+.navbar-lewagon .navbar-nav {
+  display: none; /* Hide the navbar links */
 }
