@@ -6,4 +6,7 @@ class PagesController < ApplicationController
 
   def checkout
   end
+
+  def status
+  end
 end
