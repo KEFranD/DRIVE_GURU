@@ -1,1 +1,70 @@
 // Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  background-image: url('https://res.cloudinary.com/dblraorbo/image/upload/v1686511739/Drive%20Guru/Unleash_Your_Driving_Potential_1240_1920_px_lhgok2.gif');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+body.home-page h1 {
+  font-size: 27px;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.explore-button {
+  display: block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  color: #3a3a3a;
+  background: #fff;
+  line-height: 30px;
+  border-radius: 40px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: rgb(255, 123, 0) -2px -2px 0px 2px, rgb(84, 233, 246) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+  transition: all 0.2s;
+  margin-top: auto;
+  margin-bottom: 40%;
+}
+
+.logo {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: auto;
+}
