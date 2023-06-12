@@ -8,8 +8,10 @@
     </a>
     <%# <a href="/chatroom">
     </a> %>
-    <a href="#">
-      <i class="fas fa-user white-icon"></i>
-    </a>
+     <% if current_user.present? %>
+      <%= link_to user_path(current_user) do %>
+        <i class="fas fa-user white-icon"></i>
+      <% end %>
+    <% end %>
   </div>
 </footer>
