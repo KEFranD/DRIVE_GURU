@@ -24,13 +24,6 @@
           <%= form.select :time, [['30m', '30 minutes'], ['1h', '1 hour'], ['2h', '2 hours']] %>
         </div>
       </div>
-      <div class='row px-4 mb-3 pb-4'>
-        <div class='container text-center rounded py-1', style='background-color:#FFE500'>
-          <%= form.label :booked_user_id, "Instructor" %>
-          <br>
-          <%= form.collection_select :booked_user_id, User.where(instructor: true), :id, :full_name %>
-        </div>
-      </div>
     </div>
 </div>
 <div class='container'>
