@@ -5,7 +5,9 @@
     </a>
     <%= link_to bookings_path do %>
       <i class="fas fa-calendar-alt white-icon"></i>
-    <% end %>
+    </a>
+    <%# <a href="/chatroom">
+    </a> %>
     <% if current_user.present? %>
       <%= link_to user_path(current_user) do %>
         <i class="fas fa-user white-icon"></i>
