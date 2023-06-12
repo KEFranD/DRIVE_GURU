@@ -14,6 +14,8 @@ class User < ApplicationRecord
   # Messages received by this user
   has_many :received_messages, foreign_key: :receiver_id, class_name: 'Message'
 
+  has_many :user_bookings, class_name: 'Booking', foreign_key: 'user_id'
+
   has_one :instructor
 
   # Include default devise modules. Others available are:

@@ -2,7 +2,11 @@
 <p><strong>Car Transmission:</strong> <%= @instructor.car_transmission %></p>
 <p><strong>Work Phone Number:</strong> <%= @instructor.work_phone_number %></p>
 <p><strong>Region:</strong> <%= @instructor.address %></p>
-<p><%= link_to "Back to instructors", instructors_path %></p>
-<p><%= link_to "Book this instructor", new_instructor_booking_path(@instructor.id) %></p>
-<p><%= link_to "Edit this instructor", edit_instructor_path %></p>
-<p><%= button_to "Destroy this instructor", @instructor, method: :delete %></p>
+<div style="width: 80%; height: 250px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+<p><%= link_to "Back to instructors", instructors_path, class: "btn btn-primary" %></p>
+<p><%= link_to "Book Now", new_instructor_booking_path(@instructor.id), class: "btn btn-primary" %></p>

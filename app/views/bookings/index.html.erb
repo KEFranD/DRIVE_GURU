@@ -1,13 +1,14 @@
 <h1>All Bookings</h1>
 
 <ul class="list-group">
-  <% @user.bookings.each do |booking| %>
+  <% @bookings.each do |booking| %>
     <li class="list-group-item">
       <%= booking.date %>
       <%= booking.time %>
       <%= link_to "Delete",
         booking_path(booking),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        method: :delete,
+        data: { confirm: "Are you sure?" }
       %>
     </li>
   <% end %>
