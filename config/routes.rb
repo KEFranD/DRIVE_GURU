@@ -22,4 +22,6 @@ Rails.application.routes.draw do
 
   end
 
+  get "status", to: "pages#status"
+  get "checkout", to: "pages#checkout"
 end
