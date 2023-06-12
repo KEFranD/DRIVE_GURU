@@ -20,7 +20,4 @@ Rails.application.routes.draw do
   resources :instructors do
     resources :bookings, only: %i[new create]
   end
-
-  get "status", to: "pages#status"
-  get "checkout", to: "pages#checkout"
 end
