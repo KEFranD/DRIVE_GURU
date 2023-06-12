@@ -43,8 +43,8 @@
     <%= f.select :time, options_for_select(time_slots), { include_blank: true }, { class: "form-control" } %>
 
     <div class="form-group">
-      <%= f.label :car_transmission, class: "form-label" %>
-      <%= f.text_field :car_transmission, value: @instructor.car_transmission, class: "form-control", readonly: true %>
+      <%= f.label :car_type, class: "form-label" %>
+      <%= f.text_field :car_type, value: @instructor.car_type, class: "form-control", readonly: true %>
     </div>
 
     <%= f.hidden_field :user_id, value: current_user.id %>

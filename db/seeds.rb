@@ -88,48 +88,48 @@ puts "User6 has been created succesfully !"
 
 puts "Creating instructor1..."
 
-instructor1 = Instructor.create(
+instructor1 = Instructor.create!(
   company_name: "Roulé",
   address: "Moka",
-  car_transmission: "automatique",
+  car_type: ["automatique"],
   work_phone_number: 84939392,
-  user_id: 1
+  user: user1
 )
 
 puts "Instructor1 has been created succesfully !"
 
 puts "Creating instructor2..."
 
-instructor2 = Instructor.create(
+instructor2 = Instructor.create!(
   company_name: "Tracé",
   address: "Tamarin",
-  car_transmission: "manuel",
+  car_type: ["manuel"],
   work_phone_number: 6473292,
-  user_id: 2
+  user: user2
 )
 
 puts "Instructor2 has been created succesfully !"
 
 puts "Creating instructor3..."
 
-instructor3 = Instructor.create(
+instructor3 = Instructor.create!(
   company_name: "Polka",
   address: "Curepipe",
-  car_transmission: "manuel",
+  car_type: ["manuel"],
   work_phone_number: 3729282,
-  user_id: 3
+  user: user3
 )
 
 puts "Instructor3 has been created succesfully !"
 
 puts "Creating instructor4..."
 
-instructor4 = Instructor.create(
+instructor4 = Instructor.create!(
   company_name: "TamMam",
   address: "Tamarin",
-  car_transmission: "automatique",
+  car_type: ["automatique"],
   work_phone_number: 8383928,
-  user_id: 4
+  user: user4
 )
 
 puts "Instructor4 has been created succesfully !"
