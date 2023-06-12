@@ -22,6 +22,9 @@ user1 = User.create(
   phone_number: "9874532",
   password: 123456
 )
+file01 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579613/Drive%20Guru/user_1_i4k1ru.png")
+user1.photo.attach(io: file01, filename: "nes.png", content_type: "image/png")
+user1.save
 
 puts "User1 has been created succesfully !"
 
@@ -34,6 +37,9 @@ user2 = User.create(
   phone_number: "5478390",
   password: 123456
 )
+file02 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579612/Drive%20Guru/user_2_fjfe7t.png")
+user2.photo.attach(io: file02, filename: "nes.png", content_type: "image/png")
+user2.save
 
 puts "User2 has been created succesfully !"
 
@@ -46,6 +52,9 @@ user3 = User.create(
   phone_number: "8484938",
   password: 123456
 )
+file03 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579612/Drive%20Guru/user_3_p2kz4a.png")
+user3.photo.attach(io: file03, filename: "nes.png", content_type: "image/png")
+user3.save
 
 puts "User3 has been created succesfully !"
 
@@ -58,6 +67,9 @@ user4 = User.create(
   phone_number: "7439829",
   password: 123456
 )
+file04 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579613/Drive%20Guru/user_4_sckbh1.png")
+user4.photo.attach(io: file04, filename: "nes.png", content_type: "image/png")
+user4.save
 
 puts "User4 has been created succesfully !"
 
@@ -70,6 +82,9 @@ user5 = User.create(
   phone_number: "3739829",
   password: 123456
 )
+file05 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579613/Drive%20Guru/user_5_ra1kbt.png")
+user5.photo.attach(io: file05, filename: "nes.png", content_type: "image/png")
+user5.save
 
 puts "User5 has been created succesfully !"
 
@@ -82,6 +97,9 @@ user6 = User.create(
   phone_number: "7439829",
   password: 123456
 )
+file06 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579613/Drive%20Guru/user_6_h5bbt1.png")
+user6.photo.attach(io: file06, filename: "nes.png", content_type: "image/png")
+user6.save
 
 puts "User6 has been created succesfully !"
 
