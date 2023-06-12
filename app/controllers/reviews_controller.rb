@@ -3,12 +3,10 @@ class ReviewsController < ApplicationController
   before_action :set_booking, only: %i[new create]
 
   def new
-    # Code to create a new review instance
     @review = Review.new
   end
 
   def create
-    # Code to create a new review with the provided parameters
     @review = Review.new(review_params)
 
     @review.booking = @booking
@@ -20,11 +18,9 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    # Code to edit a specific review
   end
 
   def update
-    # Code to update a specific review with the provided parameters
     if @review.update(review_params)
       redirect_to booking_path(@review.booking_id), notice: "Review was successfully updated."
     else
@@ -33,7 +29,6 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    # Code to delete a specific review
     @review.destroy
     redirect_to booking_path(@review.booking_id), notice: "Review was successfully deleted."
   end
