@@ -8,5 +8,5 @@
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
-<%= link_to "Book Now", new_booking_path(instructor_id: @instructor.id), class: "btn btn-primary" %>
-<%= link_to "Back to Instructors", instructors_path, class: "btn btn-primary" %>
+<p><%= link_to "Back to instructors", instructors_path, class: "btn btn-primary" %></p>
+<p><%= link_to "Book Now", new_instructor_booking_path(@instructor.id), class: "btn btn-primary" %></p>

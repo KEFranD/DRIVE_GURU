@@ -60,20 +60,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:date, :user_id, :time, :instructor_id)
   end
-
-  def time_slots
-    start_hour = 7
-    end_hour = 17
-    slot_duration = 1.hour
-    slots = []
-
-    (start_hour..end_hour).each do |hour|
-      start_time = format('%02d:00', hour)
-      end_time = format('%02d:00', hour + 1)
-      slot_label = "#{start_time}-#{end_time}"
-      slots << [slot_label, start_time]
-    end
-
-    slots
-  end
 end

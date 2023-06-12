@@ -14,4 +14,7 @@ class PagesController < ApplicationController
       @booking = Booking.new
     end
   end
+
+  def status
+  end
 end
