@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'date'
+require 'open-uri'
 
 puts "Cleaning database..."
 Instructor.destroy_all
@@ -18,7 +19,7 @@ user1 = User.create(
   first_name: "John",
   last_name: "Doe",
   email: "johndoe@mail.com",
-  phone_number: 9874532,
+  phone_number: "9874532",
   password: 123456
 )
 
@@ -30,7 +31,7 @@ user2 = User.create(
   first_name: "Bernard",
   last_name: "Mingo",
   email: "bernardmingo@mail.com",
-  phone_number: 5478390,
+  phone_number: "5478390",
   password: 123456
 )
 
@@ -42,7 +43,7 @@ user3 = User.create(
   first_name: "Vincent",
   last_name: "Leaure",
   email: "vincentleaure@mail.com",
-  phone_number: 8484938,
+  phone_number: "8484938",
   password: 123456
 )
 
@@ -54,7 +55,7 @@ user4 = User.create(
   first_name: "Pierre",
   last_name: "Man",
   email: "pierreman@mail.com",
-  phone_number: 7439829,
+  phone_number: "7439829",
   password: 123456
 )
 
@@ -66,7 +67,7 @@ user5 = User.create(
   first_name: "Brice",
   last_name: "Bannesy",
   email: "bricebannesy@mail.com",
-  phone_number: 3739829,
+  phone_number: "3739829",
   password: 123456
 )
 
@@ -78,7 +79,7 @@ user6 = User.create(
   first_name: "Elodie",
   last_name: "Janvier",
   email: "elodiejanvier@mail.com",
-  phone_number: 7439829,
+  phone_number: "7439829",
   password: 123456
 )
 
@@ -92,9 +93,12 @@ instructor1 = Instructor.create!(
   company_name: "Roulé",
   address: "Moka",
   car_type: ["automatique"],
-  work_phone_number: 84939392,
+  work_phone_number: "84939392",
   user: user1
 )
+file1 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572822/Drive%20Guru/instructor_1_piowwx.jpg")
+instructor1.photo.attach(io: file1, filename: "nes.png", content_type: "image/png")
+instructor1.save
 
 puts "Instructor1 has been created succesfully !"
 
@@ -104,7 +108,7 @@ instructor2 = Instructor.create!(
   company_name: "Tracé",
   address: "Tamarin",
   car_type: ["manuel"],
-  work_phone_number: 6473292,
+  work_phone_number: "6473292",
   user: user2
 )
 
@@ -116,7 +120,7 @@ instructor3 = Instructor.create!(
   company_name: "Polka",
   address: "Curepipe",
   car_type: ["manuel"],
-  work_phone_number: 3729282,
+  work_phone_number: "3729282",
   user: user3
 )
 
@@ -128,7 +132,7 @@ instructor4 = Instructor.create!(
   company_name: "TamMam",
   address: "Tamarin",
   car_type: ["automatique"],
-  work_phone_number: 8383928,
+  work_phone_number: "8383928",
   user: user4
 )
 
