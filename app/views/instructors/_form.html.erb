@@ -2,7 +2,7 @@
   <%= f.input :photo, as: :file %>
   <%= f.input :company_name %>
   <%= f.input :address %>
-  <%= f.input :car_transmission %>
+  <%= f.input :car_type, collection: ['Manual', 'Automatic'], as: :check_boxes %>
   <%= f.input :work_phone_number %>
   <%= f.submit %>
 <% end %>
