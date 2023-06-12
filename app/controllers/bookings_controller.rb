@@ -10,15 +10,15 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @instructor = Instructor.find(params[:instructor_id])
-    @booking.car_transmission = @instructor.car_transmission
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.booker_id = current_user.id
+    @booking.user = current_user
 
-    instructor = Instructor.find(params[:booking][:instructor_id])
-    @booking.car_transmission = instructor.car_transmission
+
+    @instructor = Instructor.find(params[:instructor_id])
+    @booking.instructor = @instructor
 
     if @booking.save
       redirect_to checkout_path, notice: "Booking was successfully created."
@@ -58,6 +58,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date, :user_id, :time, :instructor_id)
+    params.require(:booking).permit(:date, :time, :instructor_id)
   end
 end

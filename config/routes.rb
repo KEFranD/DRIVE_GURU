@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "checkout", to: "pages#checkout"
   get "status", to: "pages#status"
 
-  get "booking_confirmation/:id", to: "bookings#confirmation", as: "booking_confirmation"
+  # get "booking_confirmation/:id", to: "bookings#confirmation", as: "booking_confirmation"
 
 
   # Define your remaining routes per the DSL in https://guides.rubyonrails.org/routing.html
