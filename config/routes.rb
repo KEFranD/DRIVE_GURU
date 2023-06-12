@@ -9,17 +9,16 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :bookings, only: [] do
-    resources :reviews, only: [:new, :create, :edit, :update]
+  resources :bookings, only: %i[edit update destroy] do
+    resources :reviews, only: %i[new create edit update]
   end
 
   resources :users, only: [:show] do
-    resources :bookings, only: [:index, :show]
+    resources :bookings, only: %i[index show]
   end
 
   resources :instructors do
-    resources :bookings, only: [:new, :create]
-
+    resources :bookings, only: %i[new create]
   end
 
   get "status", to: "pages#status"
