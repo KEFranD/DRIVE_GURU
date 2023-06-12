@@ -1,38 +1,39 @@
 class BookingsController < ApplicationController
   before_action :set_instructor, only: [:show, :edit, :update, :destroy]
+  helper_method :time_slots
 
   def index
-    # Code to fetch and display all bookings
-    @bookings = current_user.bookings
+    @user = current_user
+    @bookings = @user.user_bookings
   end
 
   def new
-    # Code to create a new booking instance
     @booking = Booking.new
+    @instructor = Instructor.find(params[:instructor_id])
+    @booking.car_transmission = @instructor.car_transmission
   end
 
   def create
-    # Code to create a new booking with the provided parameters
     @booking = Booking.new(booking_params)
     @booking.booker_id = current_user.id
 
+    instructor = Instructor.find(params[:booking][:instructor_id])
+    @booking.car_transmission = instructor.car_transmission
+
     if @booking.save
-      redirect_to booking_path(@booking), notice: "Booking was successfully created."
+      redirect_to checkout_path, notice: "Booking was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def show
-    # Code to fetch and display a specific booking
   end
 
   def edit
-    # Code to edit a specific booking
   end
 
   def update
-    # Code to update a specific booking with the provided parameters
     if @booking.update(booking_params)
       redirect_to booking_path(@booking), notice: "Booking was successfully updated."
     else
@@ -41,12 +42,12 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    # Code to delete a specific booking
     @booking.destroy
     redirect_to bookings_path, notice: "Booking was successfully deleted."
   end
 
   private
+
   def format_duration(duration)
     hours, minutes = duration.split('h')
     "#{hours.to_i} hours #{minutes.to_i} minutes"

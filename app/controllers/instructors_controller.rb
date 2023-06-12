@@ -2,6 +2,14 @@ class InstructorsController < ApplicationController
   before_action :set_instructor, only: %i[show edit update destroy]
 
   def show
+    @instructor = Instructor.find(params[:id])
+    # The `geocoded` scope filters only flats with coordinates
+    # @markers = []
+    # marker = {
+    #   lat: @user.latitude,
+    #   lng: @user.longitude
+    # }
+    # @markers << marker
   end
 
   def index

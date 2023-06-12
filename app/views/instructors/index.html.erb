@@ -19,7 +19,6 @@
   <% @instructors.each do |instructor| %>
     <div class="instructor-card">
       <h2><a href="<%= instructor_path(instructor) %>"><%= instructor.company_name %></a></h2>
-      <p><strong>Region:</strong> <%= instructor.address %></p>
     </div>
   <% end %>
 <% end %>
