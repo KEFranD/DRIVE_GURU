@@ -13,11 +13,10 @@ Rails.application.routes.draw do
     resources :reviews, only: %i[new create edit update]
   end
 
-  resources :users, only: [:show] do
-    resources :bookings, only: %i[index show]
-  end
+  resources :users, only: [:show]
 
   resources :instructors do
     resources :bookings, only: %i[new create]
   end
+  resources :bookings, only: %i[index show]
 end
