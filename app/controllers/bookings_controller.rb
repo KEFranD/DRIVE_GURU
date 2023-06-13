@@ -1,23 +1,23 @@
 class BookingsController < ApplicationController
-  before_action :set_instructor, only: [:show, :edit, :update, :destroy]
+  before_action :set_instructor, only: %i[show edit update new create]
   helper_method :time_slots
 
   def index
     @user = current_user
-    @bookings = @user.user_bookings
+    if @user.instructor.present?
+      @bookings = @user.instructor.bookings
+    else
+      @bookings = @user.bookings
+    end
   end
 
   def new
     @booking = Booking.new
-    @instructor = Instructor.find(params[:instructor_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-
-
-    @instructor = Instructor.find(params[:instructor_id])
     @booking.instructor = @instructor
 
     if @booking.save
@@ -42,6 +42,7 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to bookings_path, notice: "Booking was successfully deleted."
   end

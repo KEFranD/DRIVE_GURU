@@ -16,5 +16,6 @@ class PagesController < ApplicationController
   end
 
   def status
+    @booking = Booking.last
   end
 end

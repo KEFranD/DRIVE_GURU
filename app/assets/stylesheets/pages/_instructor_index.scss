@@ -7,7 +7,7 @@
 }
 
 .instructor-card p strong {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .no-results-message {
@@ -17,4 +17,53 @@
   padding: 10px;
   margin-bottom: 10px;
   color: #721c24;
+}
+
+
+.search-form {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  padding: 10px;
+}
+
+.search-button {
+  background-color: orange;
+  color: white;
+  margin: 0;
+}
+
+.instructor-card {
+  margin-bottom: 20px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.instructor-card:hover {
+  transform: scale(1.05);
+}
+
+.instructor-image {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card-title {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 0 black;
 }

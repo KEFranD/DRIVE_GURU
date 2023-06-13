@@ -1,27 +1,44 @@
-<div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
-    <%= form_with url: instructors_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search by region"
-        %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
 
-<% if @instructors.empty? %>
-  <div class="no-results-message">
-    <p>Sorry, no instructors are available in this region.</p>
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-sm-8">
+      <%= form_with url: instructors_path, method: :get, class: "search-form" do %>
+        <div class="d-flex">
+          <%= text_field_tag :query,
+                params[:query],
+                class: "form-control mr-2 search-bar align-self-center",
+                placeholder: "Search by region"
+            %>
+          <%= submit_tag "Search", name: "", class: "btn btn-warning search-button" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% else %>
-  <% @instructors.each do |instructor| %>
-    <div class="instructor-card">
-      <h2><a href="<%= instructor_path(instructor) %>"><%= instructor.company_name %></a></h2>
-      <% if instructor.photo.key.present? %>
-      <%= cl_image_tag instructor.photo.key, height: 200, width: 200, crop: :fill, class: 'rounded-circle' %>
+
+  <% if @instructors.empty? %>
+    <div class="row justify-content-center">
+      <div class="col-sm-8 mt-4">
+        <div class="no-results-message">
+          <p>Sorry, no instructors are available in this region.</p>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div class="row justify-content-center">
+      <% @instructors.each do |instructor| %>
+        <div class="col-sm-6 col-md-4">
+          <a href="<%= instructor_path(instructor) %>">
+            <div class="card mb-4 instructor-card" style="background-image: url('https://res.cloudinary.com/dujnrrugq/image/upload/v1686654090/instructor_card_big_lnynfz.png')">
+              <% if instructor.photo.key.present? %>
+                <%= cl_image_tag instructor.photo.key, height: 150, width: 150, crop: :fill, class: 'card-img-top instructor-image' %>
+              <% end %>
+              <div class="card-body">
+                <h5 class="card-title text-center"><%= instructor.company_name %></h5>
+              </div>
+            </div>
+          </a>
+        </div>
       <% end %>
     </div>
   <% end %>
-<% end %>
+</div>
