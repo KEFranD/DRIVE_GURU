@@ -9,6 +9,7 @@ require 'date'
 require 'open-uri'
 
 puts "Cleaning database..."
+Review.destroy_all
 Instructor.destroy_all
 User.destroy_all
 Booking.destroy_all
