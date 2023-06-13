@@ -31,6 +31,12 @@
                 input_html: { autocomplete: "current-password" } %>
   </div>
 
+  <% if current_user.instructor.present? %>
+    <%= link_to "Edit Instructor Profile", edit_instructor_path(current_user.instructor) %>
+  <% else %>
+    <%= link_to "Become an Instructor", new_instructor_path %>
+  <% end %>
+
   <div class="form-actions">
     <%= f.button :submit, "Update" %>
   </div>
