@@ -1,15 +1,23 @@
-<h1>All Bookings</h1>
-
-<ul class="list-group">
-  <% @bookings.each do |booking| %>
-    <li class="list-group-item">
-      <%= booking.date %>
-      <%= booking.time %>
-      <%= link_to "Delete",
-        booking_path(booking),
-        data: { turbo_method: :delete, confirm: "Are you sure?" }
-      %>
-    </li>
-  <% end %>
-</ul>
+<div class="container col-10 container-bookings", style="background-color:#56CCF2">
+  <h1 class="text-center py-4", style="color:#FFFFFF">All Bookings</h1>
+    <div class="container">
+            <% @bookings.each do |booking| %>
+              <div class="row mb-2 justify-content-center">
+                <div class="col-10 border-radius text-center", style="background-color:#FFE500">
+                  <p style="color:#2B2E2E">
+                    Date :     <%= booking.date %>
+                    <br>
+                    Time :     <%= booking.time %>
+                    <br>
+                    Car Type :  <%= booking.car_type.join("") %>
+                  </p>
+                </div>
+              </div>
+                    <%= link_to "Delete",
+                      booking_path(booking),
+                      data: { turbo_method: :delete, confirm: "Are you sure?" }
+                    %>
+            <% end %>
+    </div>
+</div>
 <br>

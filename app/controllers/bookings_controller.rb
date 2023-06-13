@@ -17,6 +17,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.car_type = [booking_params[:car_type]]
     @booking.user = current_user
     @booking.instructor = @instructor
 
@@ -59,6 +60,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date, :time, :instructor_id)
+    params.require(:booking).permit(:date, :time, :instructor_id, :car_type)
   end
 end
