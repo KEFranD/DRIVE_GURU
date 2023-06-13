@@ -1,6 +1,7 @@
 
 <%= simple_form_for([@instructor, @booking]) do |f| %>
   <%= f.input :date %>
-  <%= f.input :time %>
+  <%= f.input :time, collection: ['30 min', '1 h', '2 h'] %>
+  <%= f.input :car_type, collection: @instructor.car_type %>
   <%= f.submit %>
 <% end %>
