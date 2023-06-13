@@ -11,3 +11,10 @@
 
 <p><%= link_to "Back to instructors", instructors_path, class: "btn btn-primary" %></p>
 <p><%= link_to "Book Now", new_instructor_booking_path(@instructor.id), class: "btn btn-primary" %></p>
+
+<% if @reviews.nil? %>
+  <p>No reviews yet</p>
+<% else %>
+  <% @reviews.each do |review| %>
+  <% end %>
+<% end %>

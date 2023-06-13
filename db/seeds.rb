@@ -7,6 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'date'
 require 'open-uri'
+# require_relative '../app/models/reviews'
+
 
 puts "Cleaning database..."
 Instructor.destroy_all
@@ -118,7 +120,15 @@ file1 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572822/
 instructor1.photo.attach(io: file1, filename: "nes.png", content_type: "image/png")
 instructor1.save
 
-puts "Instructor1 has been created succesfully !"
+Review.create!(
+  rating: 4,
+  comment: "Great instructor!",
+  user: user5,
+  instructor: instructor1
+)
+
+puts "Instructor1 has been created successfully !"
+
 
 puts "Creating instructor2..."
 
@@ -132,6 +142,13 @@ instructor2 = Instructor.create!(
 file2 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572827/Drive%20Guru/instructor_2_ctpbi7.jpg")
 instructor2.photo.attach(io: file2, filename: "nes.png", content_type: "image/png")
 instructor2.save
+
+Review.create!(
+  rating: 3,
+  comment: "bad experience!",
+  user: user6,
+  instructor: instructor2
+)
 
 puts "Instructor2 has been created succesfully !"
 
@@ -148,6 +165,12 @@ file3 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572860/
 instructor3.photo.attach(io: file3, filename: "nes.png", content_type: "image/png")
 instructor3.save
 
+Review.create!(
+  rating: 4,
+  comment: "Value for money!",
+  user: user4,
+  instructor: instructor3
+)
 puts "Instructor3 has been created succesfully !"
 
 puts "Creating instructor4..."
@@ -163,6 +186,12 @@ file4 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572865/
 instructor4.photo.attach(io: file4, filename: "nes.png", content_type: "image/png")
 instructor4.save
 
+Review.create!(
+  rating: 5,
+  comment: "a really good experience!",
+  user: user1,
+  instructor: instructor4
+)
 puts "Instructor4 has been created succesfully !"
 
 puts "Creating booking1..."

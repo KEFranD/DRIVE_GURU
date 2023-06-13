@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   # Define your remaining routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  get '/booking/:id', to: 'reviews#new'
+
+
   resources :bookings, only: %i[edit update destroy] do
     resources :reviews, only: %i[new create edit update]
   end

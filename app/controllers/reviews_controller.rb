@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [:edit, :update, :destroy]
+  before_action :set_review, only: %i[edit update destroy]
   before_action :set_booking, only: %i[new create]
 
   def new

@@ -1,10 +1,14 @@
 class BookingsController < ApplicationController
-  before_action :set_instructor, only: [:show, :edit, :update, :destroy]
+  before_action :set_instructor, only: %i[show edit update destroy]
   helper_method :time_slots
 
   def index
     @user = current_user
-    @bookings = @user.user_bookings
+    if @user.instructor.present?
+      @bookings = @user.instructor.bookings
+    else
+      @bookings = @user.bookings
+    end
   end
 
   def new
