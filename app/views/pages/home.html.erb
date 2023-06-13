@@ -1,7 +1,7 @@
 <div class="container--home">
   <img src="https://res.cloudinary.com/dblraorbo/image/upload/v1686255430/Drive%20Guru/drive_guru_logo.svg" alt="Drive Guru Logo" class="logo">
   <% if current_user %>
-    <h1>Hi <%= current_user.first_name %>, your Drive Guru awaits!</h1>
+    <h1>Hi <span><%= current_user.first_name %></span>, your Drive Guru awaits!</h1>
   <% else %>
     <h1>Welcome to DriveGuru!</h1>
   <% end %>
