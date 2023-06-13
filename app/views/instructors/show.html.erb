@@ -16,5 +16,7 @@
   <p>No reviews yet</p>
 <% else %>
   <% @reviews.each do |review| %>
+    <p><%= review.description %></p>
+    <p><%= review.rating %></p>
   <% end %>
 <% end %>
