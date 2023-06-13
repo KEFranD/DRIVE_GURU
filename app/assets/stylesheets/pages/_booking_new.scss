@@ -1,0 +1,36 @@
+.container-form {
+position: absolute;
+background-color: #DBD6D6;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+border-radius: 5px;
+}
+
+.button-submit {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-text-date {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-text-time {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.center-text-car {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.border-radius {
+  border-radius: 5px;
+}
