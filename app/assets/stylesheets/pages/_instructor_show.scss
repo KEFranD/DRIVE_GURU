@@ -1,0 +1,61 @@
+body, html {
+  height: 125%;
+  overflow: auto;
+}
+
+.container-instructor-show {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  max-width: 800px;
+}
+
+.container-instructor-show h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.container-instructor-show h3 {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.container-instructor-show strong {
+  font-weight: bold;
+}
+
+.hero-instructor {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-image: url('https://res.cloudinary.com/dblraorbo/image/upload/v1686682126/Drive%20Guru/blue-background.png');
+  background-size: cover;
+  background-position: center;
+  padding: 70px 19px;
+  margin-bottom: -72px;
+}
+
+.back-link {
+  margin: -43px 0 0;
+  font-weight: bold;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.review-block {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 90%; /* Adjust the width as per your needs */
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+  max-height: 200px; /* Adjust the height as per your needs */
+}
