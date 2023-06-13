@@ -10,6 +10,8 @@ class InstructorsController < ApplicationController
       lng: @instructor.longitude
     }
     @markers << marker
+    @bookings = @instructor.bookings if @instructor.bookings.present?
+    @reviews = @bookings.map(&:review).compact unless @bookings.nil?
   end
 
   def index
