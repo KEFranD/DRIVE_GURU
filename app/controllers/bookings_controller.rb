@@ -4,7 +4,11 @@ class BookingsController < ApplicationController
 
   def index
     @user = current_user
-    @bookings = @user.user_bookings
+    if @user.instructor.present?
+      @bookings = @user.instructor.bookings
+    else
+      @bookings = @user.bookings
+    end
   end
 
   def new
