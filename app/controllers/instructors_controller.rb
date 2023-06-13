@@ -25,6 +25,7 @@ class InstructorsController < ApplicationController
 
   def create
     @instructor = Instructor.new(instructor_params)
+    @instructor.car_type = params[:instructor][:car_type].compact_blank
     @instructor.user = current_user
     if @instructor.save
       redirect_to instructors_path(@instructor), notice: "Instructor was successfully created."
@@ -58,6 +59,6 @@ class InstructorsController < ApplicationController
   end
 
   def instructor_params
-    params.require(:instructor).permit(:company_name, :car_transmission, :work_phone_number, :address, :user_id)
+    params.require(:instructor).permit(:company_name, :car_type, :work_phone_number, :address, :user_id, :photo)
   end
 end

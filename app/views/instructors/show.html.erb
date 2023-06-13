@@ -1,5 +1,6 @@
+<%= cl_image_tag @instructor.photo.key, height: 200, width: 200, crop: :fill, class: 'rounded-circle' %>
 <h1><%= @instructor.company_name %></h1>
-<p><strong>Car Transmission:</strong> <%= @instructor.car_transmission %></p>
+<p><strong>Car Type:</strong> <%= @instructor.car_type.join(', ') %></p>
 <p><strong>Work Phone Number:</strong> <%= @instructor.work_phone_number %></p>
 <p><strong>Region:</strong> <%= @instructor.address %></p>
 <div style="width: 80%; height: 250px;"

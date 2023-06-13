@@ -19,6 +19,9 @@
   <% @instructors.each do |instructor| %>
     <div class="instructor-card">
       <h2><a href="<%= instructor_path(instructor) %>"><%= instructor.company_name %></a></h2>
+      <% if instructor.photo.key.present? %>
+      <%= cl_image_tag instructor.photo.key, height: 200, width: 200, crop: :fill, class: 'rounded-circle' %>
+      <% end %>
     </div>
   <% end %>
 <% end %>

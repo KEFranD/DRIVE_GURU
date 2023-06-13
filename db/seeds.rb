@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'date'
+require 'open-uri'
 
 puts "Cleaning database..."
 Instructor.destroy_all
@@ -18,9 +19,12 @@ user1 = User.create(
   first_name: "John",
   last_name: "Doe",
   email: "johndoe@mail.com",
-  phone_number: 9874532,
+  phone_number: "9874532",
   password: 123456
 )
+file01 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579613/Drive%20Guru/user_1_i4k1ru.png")
+user1.photo.attach(io: file01, filename: "nes.png", content_type: "image/png")
+user1.save
 
 puts "User1 has been created succesfully !"
 
@@ -30,9 +34,12 @@ user2 = User.create(
   first_name: "Bernard",
   last_name: "Mingo",
   email: "bernardmingo@mail.com",
-  phone_number: 5478390,
+  phone_number: "5478390",
   password: 123456
 )
+file02 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579612/Drive%20Guru/user_2_fjfe7t.png")
+user2.photo.attach(io: file02, filename: "nes.png", content_type: "image/png")
+user2.save
 
 puts "User2 has been created succesfully !"
 
@@ -42,9 +49,12 @@ user3 = User.create(
   first_name: "Vincent",
   last_name: "Leaure",
   email: "vincentleaure@mail.com",
-  phone_number: 8484938,
+  phone_number: "8484938",
   password: 123456
 )
+file03 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579612/Drive%20Guru/user_3_p2kz4a.png")
+user3.photo.attach(io: file03, filename: "nes.png", content_type: "image/png")
+user3.save
 
 puts "User3 has been created succesfully !"
 
@@ -54,9 +64,12 @@ user4 = User.create(
   first_name: "Pierre",
   last_name: "Man",
   email: "pierreman@mail.com",
-  phone_number: 7439829,
+  phone_number: "7439829",
   password: 123456
 )
+file04 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579613/Drive%20Guru/user_4_sckbh1.png")
+user4.photo.attach(io: file04, filename: "nes.png", content_type: "image/png")
+user4.save
 
 puts "User4 has been created succesfully !"
 
@@ -66,9 +79,12 @@ user5 = User.create(
   first_name: "Brice",
   last_name: "Bannesy",
   email: "bricebannesy@mail.com",
-  phone_number: 3739829,
+  phone_number: "3739829",
   password: 123456
 )
+file05 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579613/Drive%20Guru/user_5_ra1kbt.png")
+user5.photo.attach(io: file05, filename: "nes.png", content_type: "image/png")
+user5.save
 
 puts "User5 has been created succesfully !"
 
@@ -78,9 +94,12 @@ user6 = User.create(
   first_name: "Elodie",
   last_name: "Janvier",
   email: "elodiejanvier@mail.com",
-  phone_number: 7439829,
+  phone_number: "7439829",
   password: 123456
 )
+file06 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579613/Drive%20Guru/user_6_h5bbt1.png")
+user6.photo.attach(io: file06, filename: "nes.png", content_type: "image/png")
+user6.save
 
 puts "User6 has been created succesfully !"
 
@@ -91,10 +110,13 @@ puts "Creating instructor1..."
 instructor1 = Instructor.create!(
   company_name: "Roulé",
   address: "Moka",
-  car_type: ["automatique"],
-  work_phone_number: 84939392,
+  car_type: ["Automatic"],
+  work_phone_number: "84939392",
   user: user1
 )
+file1 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572822/Drive%20Guru/instructor_1_piowwx.jpg")
+instructor1.photo.attach(io: file1, filename: "nes.png", content_type: "image/png")
+instructor1.save
 
 puts "Instructor1 has been created succesfully !"
 
@@ -103,10 +125,13 @@ puts "Creating instructor2..."
 instructor2 = Instructor.create!(
   company_name: "Tracé",
   address: "Tamarin",
-  car_type: ["manuel"],
-  work_phone_number: 6473292,
+  car_type: ["Manual"],
+  work_phone_number: "6473292",
   user: user2
 )
+file2 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572827/Drive%20Guru/instructor_2_ctpbi7.jpg")
+instructor2.photo.attach(io: file2, filename: "nes.png", content_type: "image/png")
+instructor2.save
 
 puts "Instructor2 has been created succesfully !"
 
@@ -115,10 +140,13 @@ puts "Creating instructor3..."
 instructor3 = Instructor.create!(
   company_name: "Polka",
   address: "Curepipe",
-  car_type: ["manuel"],
-  work_phone_number: 3729282,
+  car_type: ["Manual"],
+  work_phone_number: "3729282",
   user: user3
 )
+file3 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572860/Drive%20Guru/instructor_3_lebasq.jpg")
+instructor3.photo.attach(io: file3, filename: "nes.png", content_type: "image/png")
+instructor3.save
 
 puts "Instructor3 has been created succesfully !"
 
@@ -127,10 +155,13 @@ puts "Creating instructor4..."
 instructor4 = Instructor.create!(
   company_name: "TamMam",
   address: "Tamarin",
-  car_type: ["automatique"],
-  work_phone_number: 8383928,
+  car_type: ["Automatic"],
+  work_phone_number: "8383928",
   user: user4
 )
+file4 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572865/Drive%20Guru/instructor_4_ixovgf.png")
+instructor4.photo.attach(io: file4, filename: "nes.png", content_type: "image/png")
+instructor4.save
 
 puts "Instructor4 has been created succesfully !"
 
