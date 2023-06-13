@@ -8,6 +8,7 @@
     <%= f.input :last_name, required: true, autofocus: true, input_html: { autocomplete: "last_name" } %>
     <%= f.input :phone_number, required: true, autofocus: true, input_html: { autocomplete: "phone_number" } %>
     <%= f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email" } %>
+    <%= f.input :photo, as: :file %>
 
     <%# <% if resource.instructor? %>
       <%# <%= f.input :address, required: true, autofocus: true, input_html: { autocomplete: "address" } %>
