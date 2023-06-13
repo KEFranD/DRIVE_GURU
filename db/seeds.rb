@@ -123,7 +123,7 @@ instructor1.save
 
 Review.create!(
   rating: 4,
-  comment: "Great instructor!",
+  description: "Great instructor!",
   user: user5,
   instructor: instructor1
 )
@@ -146,7 +146,7 @@ instructor2.save
 
 Review.create!(
   rating: 3,
-  comment: "bad experience!",
+  description: "bad experience!",
   user: user6,
   instructor: instructor2
 )
@@ -168,7 +168,7 @@ instructor3.save
 
 Review.create!(
   rating: 4,
-  comment: "Value for money!",
+  description: "Value for money!",
   user: user4,
   instructor: instructor3
 )
@@ -189,7 +189,7 @@ instructor4.save
 
 Review.create!(
   rating: 5,
-  comment: "a really good experience!",
+  description: "a really good experience!",
   user: user1,
   instructor: instructor4
 )
