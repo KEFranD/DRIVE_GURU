@@ -109,7 +109,7 @@ puts "Creating instructor1..."
 
 instructor1 = Instructor.create!(
   company_name: "Roulé",
-  address: "Moka",
+  address: "Moka, Mauritius",
   car_type: ["Automatic"],
   work_phone_number: "84939392",
   user: user1
@@ -124,7 +124,7 @@ puts "Creating instructor2..."
 
 instructor2 = Instructor.create!(
   company_name: "Tracé",
-  address: "Tamarin",
+  address: "Tamarin, Mauritius",
   car_type: ["Manual"],
   work_phone_number: "6473292",
   user: user2
@@ -139,7 +139,7 @@ puts "Creating instructor3..."
 
 instructor3 = Instructor.create!(
   company_name: "Polka",
-  address: "Curepipe",
+  address: "Curepipe, Mauritius",
   car_type: ["Manual"],
   work_phone_number: "3729282",
   user: user3
@@ -154,7 +154,7 @@ puts "Creating instructor4..."
 
 instructor4 = Instructor.create!(
   company_name: "TamMam",
-  address: "Tamarin",
+  address: "Tamarin, Mauritius",
   car_type: ["Automatic"],
   work_phone_number: "8383928",
   user: user4
