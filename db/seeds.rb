@@ -107,7 +107,6 @@ user6.save
 puts "User6 has been created succesfully !"
 
 
-
 puts "Creating instructor1..."
 
 instructor1 = Instructor.create!(
@@ -120,16 +119,7 @@ instructor1 = Instructor.create!(
 file1 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572822/Drive%20Guru/instructor_1_piowwx.jpg")
 instructor1.photo.attach(io: file1, filename: "nes.png", content_type: "image/png")
 instructor1.save
-
-Review.create!(
-  rating: 4,
-  description: "Great instructor!",
-  user: user5,
-  instructor: instructor1
-)
-
 puts "Instructor1 has been created successfully !"
-
 
 puts "Creating instructor2..."
 
@@ -143,128 +133,20 @@ instructor2 = Instructor.create!(
 file2 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572827/Drive%20Guru/instructor_2_ctpbi7.jpg")
 instructor2.photo.attach(io: file2, filename: "nes.png", content_type: "image/png")
 instructor2.save
-
-Review.create!(
-  rating: 3,
-  description: "bad experience!",
-  user: user6,
-  instructor: instructor2
-)
-
 puts "Instructor2 has been created succesfully !"
 
-puts "Creating instructor3..."
-
-instructor3 = Instructor.create!(
-  company_name: "Polka",
-  address: "Curepipe, Mauritius",
-  car_type: ["Manual"],
-  work_phone_number: "3729282",
-  user: user3
-)
-file3 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572860/Drive%20Guru/instructor_3_lebasq.jpg")
-instructor3.photo.attach(io: file3, filename: "nes.png", content_type: "image/png")
-instructor3.save
-
-Review.create!(
-  rating: 4,
-  description: "Value for money!",
-  user: user4,
-  instructor: instructor3
-)
-puts "Instructor3 has been created succesfully !"
-
-puts "Creating instructor4..."
-
-instructor4 = Instructor.create!(
-  company_name: "TamMam",
-  address: "Tamarin, Mauritius",
-  car_type: ["Automatic"],
-  work_phone_number: "8383928",
-  user: user4
-)
-file4 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572865/Drive%20Guru/instructor_4_ixovgf.png")
-instructor4.photo.attach(io: file4, filename: "nes.png", content_type: "image/png")
-instructor4.save
-
-Review.create!(
-  rating: 5,
-  description: "a really good experience!",
-  user: user1,
-  instructor: instructor4
-)
-puts "Instructor4 has been created succesfully !"
-
-puts "Creating instructor5..."
-
-instructor5 = Instructor.create!(
-  company_name: "VroomVroom Academy",
-  address: "Port-louis, Mauritius",
-  car_type: ["Automatic"],
-  work_phone_number: "8383928",
-  user: user5
-)
-file4 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572865/Drive%20Guru/instructor_4_ixovgf.png")
-instructor5.photo.attach(io: file4, filename: "nes.png", content_type: "image/png")
-instructor5.save
-
-Review.create!(
-  rating: 5,
-  description: "a really good experience!",
-  user: user1,
-  instructor: instructor5
-)
-puts "Instructor5 has been created succesfully !"
-
-puts "Creating instructor6..."
-
-instructor6 = Instructor.create!(
-  company_name: "ProLane Auto School",
-  address: "Moka, Mauritius",
-  car_type: ["Automatic"],
-  work_phone_number: "8383928",
-  user: user4
-)
-file4 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572865/Drive%20Guru/instructor_4_ixovgf.png")
-instructor4.photo.attach(io: file4, filename: "nes.png", content_type: "image/png")
-instructor4.save
-
-Review.create!(
-  rating: 5,
-  description: "a really good experience!",
-  user: user1,
-  instructor: instructor6
-)
-puts "Instructor6 has been created succesfully !"
-
-puts "Creating instructor7..."
-
-instructor7 = Instructor.create!(
-  company_name: "Elite Wheels Academy",
-  address: "Curepipe, Mauritius",
-  car_type: ["Manual"],
-  work_phone_number: "3729282",
-  user: user3
-)
-file3 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572860/Drive%20Guru/instructor_3_lebasq.jpg")
-instructor3.photo.attach(io: file3, filename: "nes.png", content_type: "image/png")
-instructor3.save
-
-Review.create!(
-  rating: 4,
-  description: "Value for money!",
-  user: user4,
-  instructor: instructor7
-)
-puts "Instructor7 has been created succesfully !"
-
 puts "Creating booking1..."
-
 booking1 = Booking.create(
   date: Date.today + 10,
   time: "30min",
-  user_id: 5,
-  instructor_id: 1
+  user: user4,
+  instructor: instructor1
+)
+
+Review.create!(
+  rating: 4,
+  description: "Great instructor!",
+  booking: booking1
 )
 
 puts "Booking1 has been created succesfully !"
@@ -276,6 +158,13 @@ booking2 = Booking.create(
   time: "1h",
   user_id: 6,
   instructor_id: 2
+)
+
+
+Review.create!(
+  rating: 1,
+  description: "bad experience!",
+  booking: booking2
 )
 
 puts "Booking2 has been created succesfully !"
