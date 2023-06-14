@@ -1,6 +1,9 @@
-body, html {
-  height: 125%;
-  overflow: auto;
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  // min-height: 100%;
 }
 
 .container-instructor-show {
@@ -10,25 +13,25 @@ body, html {
 }
 
 .container-instructor-show h1 {
-  font-size: 24px;
+  font-size: 40px;
   margin-bottom: 10px;
-}
-
-.container-instructor-show h3 {
-  font-size: 18px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.container-instructor-show strong {
   font-weight: bold;
+  color: #00e1ff;
+  text-shadow: 1px 1px 0 black;
 }
+
+// .container-instructor-show h3 {
+//   font-size: 18px;
+//   margin-top: 20px;
+//   margin-bottom: 10px;
+//   font-weight: bold;
+// }
 
 .hero-instructor {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  background-image: url('https://res.cloudinary.com/dblraorbo/image/upload/v1686682126/Drive%20Guru/blue-background.png');
+  background-image: url('https://res.cloudinary.com/dblraorbo/image/upload/v1686720204/Drive%20Guru/orange-gradient-background.png');
   background-size: cover;
   background-position: center;
   padding: 70px 19px;
@@ -40,11 +43,17 @@ body, html {
   font-weight: bold;
 }
 
+.button-back-color {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .center {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 20px;
+  padding-bottom: 81px;
 }
 
 .review-block {
@@ -53,9 +62,29 @@ body, html {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
-  width: 90%; /* Adjust the width as per your needs */
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   overflow: auto;
-  max-height: 200px; /* Adjust the height as per your needs */
+  max-height: 200px;
+}
+
+.d-flex.w-100.justify-content-between {
+  background-color: #e9e8e8;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 47px;
+  color: coral;
+}
+
+.center .left-align {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
