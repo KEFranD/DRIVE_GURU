@@ -21,6 +21,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.instructor = @instructor
 
+
     if @booking.save
       redirect_to checkout_path, notice: "Booking was successfully created."
     else
