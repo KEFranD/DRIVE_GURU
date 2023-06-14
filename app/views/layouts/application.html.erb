@@ -30,6 +30,8 @@
     <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.css" %>
     <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.js" %>
     <link rel="stylesheet" href="https://ga.jspm.io/npm:star-rating.js@4.3.0/dist/star-rating.css">
+    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
+    <%= render 'shared/ios_pwa_links' %>
   </head>
 
   <body>
