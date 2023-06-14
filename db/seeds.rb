@@ -140,7 +140,8 @@ booking1 = Booking.create(
   date: Date.today + 10,
   time: "30min",
   user: user4,
-  instructor: instructor1
+  instructor: instructor1,
+  car_type: ["manual"]
 )
 
 Review.create!(
@@ -157,7 +158,8 @@ booking2 = Booking.create(
   date: Date.today + 20,
   time: "1h",
   user_id: 6,
-  instructor_id: 2
+  instructor_id: 2,
+  car_type: ["manual", "automatic"]
 )
 
 
