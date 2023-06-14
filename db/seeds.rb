@@ -195,6 +195,69 @@ Review.create!(
 )
 puts "Instructor4 has been created succesfully !"
 
+puts "Creating instructor5..."
+
+instructor5 = Instructor.create!(
+  company_name: "VroomVroom Academy",
+  address: "Port-louis, Mauritius",
+  car_type: ["Automatic"],
+  work_phone_number: "8383928",
+  user: user5
+)
+file4 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572865/Drive%20Guru/instructor_4_ixovgf.png")
+instructor5.photo.attach(io: file4, filename: "nes.png", content_type: "image/png")
+instructor5.save
+
+Review.create!(
+  rating: 5,
+  description: "a really good experience!",
+  user: user1,
+  instructor: instructor5
+)
+puts "Instructor5 has been created succesfully !"
+
+puts "Creating instructor6..."
+
+instructor6 = Instructor.create!(
+  company_name: "ProLane Auto School",
+  address: "Moka, Mauritius",
+  car_type: ["Automatic"],
+  work_phone_number: "8383928",
+  user: user4
+)
+file4 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572865/Drive%20Guru/instructor_4_ixovgf.png")
+instructor4.photo.attach(io: file4, filename: "nes.png", content_type: "image/png")
+instructor4.save
+
+Review.create!(
+  rating: 5,
+  description: "a really good experience!",
+  user: user1,
+  instructor: instructor6
+)
+puts "Instructor6 has been created succesfully !"
+
+puts "Creating instructor7..."
+
+instructor7 = Instructor.create!(
+  company_name: "Elite Wheels Academy",
+  address: "Curepipe, Mauritius",
+  car_type: ["Manual"],
+  work_phone_number: "3729282",
+  user: user3
+)
+file3 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572860/Drive%20Guru/instructor_3_lebasq.jpg")
+instructor3.photo.attach(io: file3, filename: "nes.png", content_type: "image/png")
+instructor3.save
+
+Review.create!(
+  rating: 4,
+  description: "Value for money!",
+  user: user4,
+  instructor: instructor7
+)
+puts "Instructor7 has been created succesfully !"
+
 puts "Creating booking1..."
 
 booking1 = Booking.create(
