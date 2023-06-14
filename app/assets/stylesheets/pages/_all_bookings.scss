@@ -1,8 +1,10 @@
-.container-bookings {
-  position: absolute;
-  background-color: #DBD6D6;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -30%);
-  border-radius: 5px;
-  }
+.button-custom {
+  border: none;
+  background-color:#FFEEB1;
+  color: #313131;
+  padding:8px 16px;
+  text-decoration: none;
+  transition-duration: 0.4s;
+}
+
+

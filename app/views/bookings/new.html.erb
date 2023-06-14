@@ -3,17 +3,17 @@
     <div class="container">
       <%= simple_form_for([@instructor, @booking], data: { controller: 'flatpickr' })  do |f| %>
         <div class="row mb-4 text-center justify-content-center">
-          <div class="col-12 border-radius", style="background-color:#FFE500">
+          <div class="col-12 border-radius", style="background-color:#FFEEB1">
             <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "date" }, class: "center-text-date" } %>
           </div>
         </div>
         <div class="row mb-4 text-center justify-content-center">
-          <div class="col-12 border-radius", style="background-color:#FFE500">
+          <div class="col-12 border-radius", style="background-color:#FFEEB1">
             <%= f.input :time, collection: ['30 min', '1 h', '2 h'], selected: "", input_html: { class: "center-text-time" } %>
           </div>
         </div>
         <div class="row mb-4 text-center justify-content-center">
-          <div class="col-12 border-radius", style="background-color:#FFE500">
+          <div class="col-12 border-radius", style="background-color:#FFEEB1">
             <%= f.input :car_type, collection: @instructor.car_type, selected: "", input_html: { class: "center-text-car" } %>
           </div>
         </div>
