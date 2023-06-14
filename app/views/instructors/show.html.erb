@@ -33,6 +33,7 @@
       <% else %>
         <% @reviews.each do |review| %>
           <div class="review-block">
+            <p><%= review.booking.user.first_name %></p>
             <p><%= review.rating %></p>
             <p><%= review.description %></p>
           </div>
@@ -41,3 +42,7 @@
     </div>
   </div>
 </div>
+
+<% content_for :meta_title, "#{@instructor.company_name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_image, cl_image_path(@instructor.photo.key) if @instructor.photo.attached? %>
+
