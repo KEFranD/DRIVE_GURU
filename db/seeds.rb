@@ -5,36 +5,214 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'date'
+require 'open-uri'
+# require_relative '../app/models/reviews'
+
+
+puts "Cleaning database..."
+Review.destroy_all
+Instructor.destroy_all
+User.destroy_all
+Booking.destroy_all
+
 puts "Creating user1..."
 
 user1 = User.create(
   first_name: "John",
   last_name: "Doe",
   email: "johndoe@mail.com",
-  phone_number: 9874532,
-  instructor: true,
-  location: "Port Louis",
+  phone_number: "9874532",
   password: 123456
 )
-
-user2 = User.create(
-  first_name: "Joel",
-  last_name: "Do",
-  email: "joedoe@mail.com",
-  phone_number: 9874123,
-  location: "Moka",
-  instructor: true,
-  password: 123456
-)
-
-user3 = User.create(
-  first_name: "Jane",
-  last_name: "Does",
-  email: "janedoe@mail.com",
-  phone_number: 9874123,
-  location: "St Pierre",
-  instructor: false,
-  password: 123123
-)
+file01 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579613/Drive%20Guru/user_1_i4k1ru.png")
+user1.photo.attach(io: file01, filename: "nes.png", content_type: "image/png")
+user1.save
 
 puts "User1 has been created succesfully !"
+
+puts "Creating user2..."
+
+user2 = User.create(
+  first_name: "Bernard",
+  last_name: "Mingo",
+  email: "bernardmingo@mail.com",
+  phone_number: "5478390",
+  password: 123456
+)
+file02 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579612/Drive%20Guru/user_2_fjfe7t.png")
+user2.photo.attach(io: file02, filename: "nes.png", content_type: "image/png")
+user2.save
+
+puts "User2 has been created succesfully !"
+
+puts "Creating user3..."
+
+user3 = User.create(
+  first_name: "Vincent",
+  last_name: "Leaure",
+  email: "vincentleaure@mail.com",
+  phone_number: "8484938",
+  password: 123456
+)
+file03 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579612/Drive%20Guru/user_3_p2kz4a.png")
+user3.photo.attach(io: file03, filename: "nes.png", content_type: "image/png")
+user3.save
+
+puts "User3 has been created succesfully !"
+
+puts "Creating user4..."
+
+user4 = User.create(
+  first_name: "Pierre",
+  last_name: "Man",
+  email: "pierreman@mail.com",
+  phone_number: "7439829",
+  password: 123456
+)
+file04 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579613/Drive%20Guru/user_4_sckbh1.png")
+user4.photo.attach(io: file04, filename: "nes.png", content_type: "image/png")
+user4.save
+
+puts "User4 has been created succesfully !"
+
+puts "Creating user5..."
+
+user5 = User.create(
+  first_name: "Brice",
+  last_name: "Bannesy",
+  email: "bricebannesy@mail.com",
+  phone_number: "3739829",
+  password: 123456
+)
+file05 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579613/Drive%20Guru/user_5_ra1kbt.png")
+user5.photo.attach(io: file05, filename: "nes.png", content_type: "image/png")
+user5.save
+
+puts "User5 has been created succesfully !"
+
+puts "Creating user6..."
+
+user6 = User.create(
+  first_name: "Elodie",
+  last_name: "Janvier",
+  email: "elodiejanvier@mail.com",
+  phone_number: "7439829",
+  password: 123456
+)
+file06 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579613/Drive%20Guru/user_6_h5bbt1.png")
+user6.photo.attach(io: file06, filename: "nes.png", content_type: "image/png")
+user6.save
+
+puts "User6 has been created succesfully !"
+
+
+
+puts "Creating instructor1..."
+
+instructor1 = Instructor.create!(
+  company_name: "Roulé",
+  address: "Moka, Mauritius",
+  car_type: ["Automatic"],
+  work_phone_number: "84939392",
+  user: user1
+)
+file1 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572822/Drive%20Guru/instructor_1_piowwx.jpg")
+instructor1.photo.attach(io: file1, filename: "nes.png", content_type: "image/png")
+instructor1.save
+
+Review.create!(
+  rating: 4,
+  description: "Great instructor!",
+  user: user5,
+  instructor: instructor1
+)
+
+puts "Instructor1 has been created successfully !"
+
+
+puts "Creating instructor2..."
+
+instructor2 = Instructor.create!(
+  company_name: "Tracé",
+  address: "Tamarin, Mauritius",
+  car_type: ["Manual"],
+  work_phone_number: "6473292",
+  user: user2
+)
+file2 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572827/Drive%20Guru/instructor_2_ctpbi7.jpg")
+instructor2.photo.attach(io: file2, filename: "nes.png", content_type: "image/png")
+instructor2.save
+
+Review.create!(
+  rating: 3,
+  description: "bad experience!",
+  user: user6,
+  instructor: instructor2
+)
+
+puts "Instructor2 has been created succesfully !"
+
+puts "Creating instructor3..."
+
+instructor3 = Instructor.create!(
+  company_name: "Polka",
+  address: "Curepipe, Mauritius",
+  car_type: ["Manual"],
+  work_phone_number: "3729282",
+  user: user3
+)
+file3 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572860/Drive%20Guru/instructor_3_lebasq.jpg")
+instructor3.photo.attach(io: file3, filename: "nes.png", content_type: "image/png")
+instructor3.save
+
+Review.create!(
+  rating: 4,
+  description: "Value for money!",
+  user: user4,
+  instructor: instructor3
+)
+puts "Instructor3 has been created succesfully !"
+
+puts "Creating instructor4..."
+
+instructor4 = Instructor.create!(
+  company_name: "TamMam",
+  address: "Tamarin, Mauritius",
+  car_type: ["Automatic"],
+  work_phone_number: "8383928",
+  user: user4
+)
+file4 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572865/Drive%20Guru/instructor_4_ixovgf.png")
+instructor4.photo.attach(io: file4, filename: "nes.png", content_type: "image/png")
+instructor4.save
+
+Review.create!(
+  rating: 5,
+  description: "a really good experience!",
+  user: user1,
+  instructor: instructor4
+)
+puts "Instructor4 has been created succesfully !"
+
+puts "Creating booking1..."
+
+booking1 = Booking.create(
+  date: Date.today + 10,
+  time: "30min",
+  user_id: 5,
+  instructor_id: 1
+)
+
+puts "Booking1 has been created succesfully !"
+
+puts "Creating booking2..."
+
+booking2 = Booking.create(
+  date: Date.today + 20,
+  time: "1h",
+  user_id: 6,
+  instructor_id: 2
+)
+
+puts "Booking2 has been created succesfully !"

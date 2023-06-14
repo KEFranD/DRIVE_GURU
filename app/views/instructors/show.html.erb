@@ -1,0 +1,23 @@
+<%= cl_image_tag @instructor.photo.key, height: 200, width: 200, crop: :fill, class: 'rounded-circle' %>
+<h1><%= @instructor.company_name %></h1>
+<p><strong>Car Type:</strong> <%= @instructor.car_type.join(', ') %></p>
+<p><strong>Work Phone Number:</strong> <%= @instructor.work_phone_number %></p>
+<p><strong>Region:</strong> <%= @instructor.address %></p>
+<div style="width: 80%; height: 250px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+<p><%= link_to "Back to instructors", instructors_path, class: "btn btn-primary" %></p>
+<p><%= link_to "Book Now", new_instructor_booking_path(@instructor.id), class: "btn btn-primary" %></p>
+<% if @reviews.nil? %>
+  <p>No reviews yet</p>
+<% else %>
+  <% @reviews.each do |review| %>
+    <p><%= review.booking.user.first_name %></p>
+      <%# <%= cl_image_tag review.booking.user.profile_picture.key, height: 100, width: 100, crop: :thumb %> 
+    <p><%= review.description %></p>
+    <p><%= review.rating %></p>
+  <% end %>
+<% end %>

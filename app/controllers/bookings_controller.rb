@@ -1,38 +1,41 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  before_action :set_instructor, only: %i[show edit update new create]
+  helper_method :time_slots
 
   def index
-    # Code to fetch and display all bookings
-    @bookings = current_user.bookings
+    @user = current_user
+    if @user.instructor.present?
+      @bookings = @user.instructor.bookings
+    else
+      @bookings = @user.bookings
+    end
   end
 
   def new
-    # Code to create a new booking instance
     @booking = Booking.new
   end
 
   def create
-    # Code to create a new booking with the provided parameters
     @booking = Booking.new(booking_params)
-    @booking.booker_id = current_user.id
+    @booking.car_type = [booking_params[:car_type]]
+    @booking.user = current_user
+    @booking.instructor = @instructor
+
 
     if @booking.save
-      redirect_to booking_path(@booking), notice: "Booking was successfully created."
+      redirect_to checkout_path, notice: "Booking was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def show
-    # Code to fetch and display a specific booking
   end
 
   def edit
-    # Code to edit a specific booking
   end
 
   def update
-    # Code to update a specific booking with the provided parameters
     if @booking.update(booking_params)
       redirect_to booking_path(@booking), notice: "Booking was successfully updated."
     else
@@ -41,22 +44,23 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    # Code to delete a specific booking
+    @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to bookings_path, notice: "Booking was successfully deleted."
   end
 
   private
+
   def format_duration(duration)
     hours, minutes = duration.split('h')
     "#{hours.to_i} hours #{minutes.to_i} minutes"
   end
 
-  def set_booking
-    @booking = Booking.find(params[:id])
+  def set_instructor
+    @instructor = Instructor.find(params[:instructor_id])
   end
 
   def booking_params
-    params.require(:booking).permit(:date, :user_id, :car_transmission, :time, :booked_user_id)
+    params.require(:booking).permit(:date, :time, :instructor_id, :car_type)
   end
 end

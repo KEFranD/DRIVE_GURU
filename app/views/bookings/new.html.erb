@@ -1,41 +1,27 @@
-<div class='container  bg-secondary-subtle col-10 my-5 rounded'>
-  <h1 class='text-center py-3'>New Booking</h1>
-    <div class='container'>
-      <%= form_with(model: @booking, url: bookings_path, method: :post) do |form| %>
-      <div class='row px-4 mb-3'>
-          <div class='container text-center rounded py-1', style='background-color:#FFE500'>
-            <%= form.label :date %>
-            <br>
-            <%= form.date_field :date %>
+<div class="container col-10 container-form", style="background-color:#56CCF2">
+  <h1 class="text-center py-4", style="color:#FFFFFF">New Booking</h1>
+    <div class="container">
+      <%= simple_form_for([@instructor, @booking], data: { controller: 'flatpickr' })  do |f| %>
+        <div class="row mb-4 text-center justify-content-center">
+          <div class="col-12 border-radius", style="background-color:#FFEEB1">
+            <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "date" }, class: "center-text-date" } %>
           </div>
-      </div>
-      <%= form.hidden_field :user_id, value: current_user.id %>
-      <div class='row px-4 mb-3'>
-        <div class='container text-center rounded py-1', style='background-color:#FFE500'>
-          <%= form.label :car_transmission %>
-          <br>
-          <%= form.select :car_transmission, ['Automatic', 'Manual'] %>
         </div>
-      </div>
-      <div class='row px-4 mb-3'>
-        <div class='container text-center rounded py-1', style='background-color:#FFE500'>
-          <%= form.label :time %>
-          <br>
-          <%= form.select :time, [['30m', '30 minutes'], ['1h', '1 hour'], ['2h', '2 hours']] %>
+        <div class="row mb-4 text-center justify-content-center">
+          <div class="col-12 border-radius", style="background-color:#FFEEB1">
+            <%= f.input :time, collection: ['30 min', '1 h', '2 h'], selected: "", input_html: { class: "center-text-time" } %>
+          </div>
         </div>
-      </div>
-      <div class='row px-4 mb-3 pb-4'>
-        <div class='container text-center rounded py-1', style='background-color:#FFE500'>
-          <%= form.label :booked_user_id, "Instructor" %>
-          <br>
-          <%= form.collection_select :booked_user_id, User.where(instructor: true), :id, :full_name %>
+        <div class="row mb-4 text-center justify-content-center">
+          <div class="col-12 border-radius", style="background-color:#FFEEB1">
+            <%= f.input :car_type, collection: @instructor.car_type, selected: "", input_html: { class: "center-text-car" } %>
+          </div>
         </div>
+      <div class="py-2 row mb-4 text-center justify-content-center">
+      <div class="col-9">
+        <%= f.submit %>
       </div>
-    </div>
-</div>
-<div class='container'>
-      <div class="mx-auto p-2" style="width: 200px;">
-        <%= form.submit "Create Booking", class:'btn btn-primary', style:'width: 100%; background-color: #FF7A00' %>
+      </div>
       <% end %>
-      </div>
+    </div>
 </div>

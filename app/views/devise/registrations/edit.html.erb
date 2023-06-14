@@ -8,10 +8,11 @@
     <%= f.input :last_name, required: true, autofocus: true, input_html: { autocomplete: "last_name" } %>
     <%= f.input :phone_number, required: true, autofocus: true, input_html: { autocomplete: "phone_number" } %>
     <%= f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email" } %>
+    <%= f.input :photo, as: :file %>
 
-    <% if resource.instructor? %>
-      <%= f.input :location, required: true, autofocus: true, input_html: { autocomplete: "location" } %>
-    <% end %>
+    <%# <% if resource.instructor? %>
+      <%# <%= f.input :address, required: true, autofocus: true, input_html: { autocomplete: "address" } %>
+    <%# <% end %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -29,6 +30,12 @@
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
   </div>
+
+  <% if current_user.instructor.present? %>
+    <%= link_to "Edit Instructor Profile", edit_instructor_path(current_user.instructor) %>
+  <% else %>
+    <%= link_to "Become an Instructor", new_instructor_path %>
+  <% end %>
 
   <div class="form-actions">
     <%= f.button :submit, "Update" %>
