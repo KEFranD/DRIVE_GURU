@@ -22,20 +22,22 @@
                 <div class="row mb-2 justify-content-center">
                   <div class="col-10 border-radius shadow-bookings pt-2", style="background-color:#FFFFFF">
                     <p style="color:#313131">
-                      <strong>Date :</strong>     <%= booking.date %>
+                      <strong>Date :</strong>     <%= booking.date %> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <i class="fa-solid fa-pen" style="color: #000000;"></i>
                       <br>
                       <strong>Time :</strong>     <%= booking.time %>
                       <br>
-                      <strong>Car Type :</strong>  <%= booking.car_type.join("") %>
+                      <strong>Car Type :</strong>  <%= booking.car_type.join("") %> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   <i class="fa-solid fa-trash" style="color: #000000;"></i>
                     </p>
                   </div>
                 </div>
                 <div class="row mb-4 justify-content-center">
                   <div class="d-flex justify-content-center" >
                       <%= link_to booking_path(booking), data: { turbo_method: :delete, confirm: "Are you sure?" } do %>
-                        <button class="border-radius text-center button-custom " >Delete</button>
+                      <div class="bin-position"><i class="fa-solid fa-trash" style="color: #000000;"></i></div>
                       <% end %>
-                      <%= link_to "Edit", edit_booking_path(booking[:id]), class: "button-edit" %>
+                      <%= link_to  edit_booking_path(booking[:id]), { turbo_method: :edit, confirm: "Are you sure?" }  do %>
+                      <div class="pen-position"><i class="fa-solid fa-pen" style="color: #000000;"></i></div>
+                      <% end %>
                   </div>
                 </div>
               <% end %>
