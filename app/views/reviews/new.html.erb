@@ -1,11 +1,22 @@
-<div class="container mx-auto" style="background-color: rgba(255, 255, 255, 0.8); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">
-  <h1>New Review</h1>
+<div class="container mx-auto" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">
+  <div class="title">
+    <h1>New Review</h1>
+  </div>
 
   <%= simple_form_for [@booking, @review] do |f| %>
 
     <%= f.input :description %>
+    
+    <%# <%= f.input :rating, collection: 1..5, as: :radio_buttons %>
 
-    <%= f.input :rating, collection: 1..5, as: :radio_buttons %>
+    <div class="rating-input">
+      <% (1..5).each do |rating| %>
+        <%= label_tag "rating_#{rating}", nil do %>
+          <%= radio_button_tag 'review[rating]', rating %>
+          <%= content_tag(:span, '', class: 'star', data: { rating: rating }) %>
+        <% end %>
+      <% end %>
+    </div>
 
     <%= f.submit class: "btn btn-primary" "Create Review" %>
   <% end %>

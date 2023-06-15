@@ -7,7 +7,7 @@
     </p>
   </div>
   <div class="center">
-    <%= cl_image_tag @instructor.photo.key, height: 150, width: 150, crop: :fill, class: 'rounded-circle' %>
+    <%# <%= cl_image_tag @instructor.photo.key, height: 150, width: 150, crop: :fill, class: 'rounded-circle' %> 
     <h1><%= @instructor.company_name %></h1>
       <%# <div class="car_type_block"> %>
       <div class="w-100">
@@ -45,4 +45,3 @@
 
 <% content_for :meta_title, "#{@instructor.company_name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_image, cl_image_path(@instructor.photo.key) if @instructor.photo.attached? %>
-

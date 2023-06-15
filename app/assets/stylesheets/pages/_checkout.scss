@@ -8,7 +8,7 @@
   background-color: #E67E22;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  // padding: 4px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.7)), url(https://res.cloudinary.com/df6aeru2i/image/upload/v1686309679/robo_ubfkjc.jpg);
   background-size: 400px 450px;
   background-repeat: no-repeat;
@@ -20,20 +20,21 @@
   margin-bottom: 10px;
   color: white;
   text-align: center;
+  padding:5px;
 }
 
 .tarif {
   margin-bottom: 10px;
   text-align: right;
   padding-right: 10px;
-  padding: 15px;
+  // padding: 15px;
   width: 100%;
   color: rgb(247, 243, 243);
 }
 
 .tarif p {
-  margin: 0;
-  padding: 5px;
+  // margin: 8px;
+  padding: 4px;
   color: white;
   text-align: right;
   display: block;
@@ -76,9 +77,6 @@
     padding: 5px;
   }
 
-  .checkout-banner {
-    padding: 5px;
-  }
 
   .text-overlay {
     font-size: 20px;
@@ -99,12 +97,12 @@
   }
 
   .tarif.p input[type="radio"] {
-    display: none; /* Hide the default radio button */
+    display: none;
   }
 
   .tarif.p label {
     position: relative;
-    padding-left: 25px; /* Space for the custom radio button */
+    padding-left: 25px;
     cursor: pointer;
   }
 
@@ -117,13 +115,13 @@
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    border: 2px solid #ccc; /* Border color of the custom radio button */
-    background-color: #fff; /* Background color of the custom radio button */
+    border: 2px solid #ccc;
+    background-color: #fff;
   }
 
   .tarif.p input[type="radio"]:checked + label:before {
-    background-color: #FF7A00; /* Change background color when radio button is checked */
-    border-color: #FF7A00; /* Change border color when radio button is checked */
+    background-color: #FF7A00;
+    border-color: #FF7A00;
   }
 
   .tarif.p label:after {
@@ -135,12 +133,12 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: #fff; /* Color of the dot inside the custom radio button */
+    background-color: #fff;
     transition: transform 0.2s ease;
   }
 
   .tarif.p input[type="radio"]:checked + label:after {
-    transform: translateY(-50%) scale(1); /* Show the dot when radio button is checked */
+    transform: translateY(-50%) scale(1);
   }
 
 }

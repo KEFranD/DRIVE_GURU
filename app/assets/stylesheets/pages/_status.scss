@@ -1,12 +1,12 @@
 // body {
 //   background-color: #f2f2f2;
 // }
-$iphone-12-pro-width: 390px;
-$iphone-12-pro-height: 844px;
+$iphone-8-pro-width: 375px;
+$iphone-8-pro-height: 667px;
 
 .container--status {
-  width: $iphone-12-pro-width;
-  height: $iphone-12-pro-height;
+  width: $iphone-8-pro-width;
+  height: $iphone-8-pro-height;
   margin: 0 auto;
   padding: 20px;
   display: flex;
@@ -62,10 +62,6 @@ $iphone-12-pro-height: 844px;
         text-decoration: none;
         transition: background-color 0.3s;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-        &:hover {
-          background-color: #0056b3;
-        }
       }
     }
   }
@@ -76,11 +72,10 @@ $iphone-12-pro-height: 844px;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
-
-    &:hover {
-      color: #0056b3;
-    }
   }
 
-
+  .msg{
+    margin-top: 70px;
+    font-size: 12px;
+  }
 }
