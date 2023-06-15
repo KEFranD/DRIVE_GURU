@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_instructor, only: %i[show edit update new create]
+  before_action :set_instructor, only: %i[show update new create]
   helper_method :time_slots
 
   def index
@@ -33,6 +33,7 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @booking = Booking.find(params[:id])
   end
 
   def update
