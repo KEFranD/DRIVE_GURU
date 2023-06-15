@@ -16,6 +16,7 @@ Review.destroy_all
 Instructor.destroy_all
 User.destroy_all
 
+
 puts "Creating user1..."
 
 user1 = User.create(
@@ -152,21 +153,21 @@ Review.create!(
 
 puts "Booking1 has been created succesfully !"
 
-puts "Creating booking2..."
+# puts "Creating booking2..."
 
-booking2 = Booking.create(
-  date: Date.today + 20,
-  time: "1h",
-  user_id: 6,
-  instructor_id: 2,
-  car_type: ["Manual"]
-)
+# booking2 = Booking.create(
+#   date: Date.today + 20,
+#   time: "1h",
+#   user_id: 6,
+#   instructor_id: 2,
+#   car_type: ["Manual"]
+# )
 
 
-Review.create!(
-  rating: 1,
-  description: "bad experience!",
-  booking: booking2
-)
+# Review.create!(
+#   rating: 1,
+#   description: "bad experience!",
+#   booking: booking2
+# )
 
-puts "Booking2 has been created succesfully !"
+# puts "Booking2 has been created succesfully !"
