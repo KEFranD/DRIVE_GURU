@@ -55,7 +55,7 @@ user3 = User.create(
   phone_number: "8484938",
   password: 123456
 )
-file03 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579612/Drive%20Guru/user_3_p2kz4a.png")
+file03 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686579613/Drive%20Guru/user_4_sckbh1.png")
 user3.photo.attach(io: file03, filename: "nes.png", content_type: "image/png")
 user3.save
 
