@@ -88,3 +88,10 @@ body {
   margin-bottom: 10px;
   font-weight: bold;
 }
+
+.rounded-circle {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
