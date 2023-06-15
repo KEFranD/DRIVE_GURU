@@ -121,19 +121,19 @@ instructor1.photo.attach(io: file1, filename: "nes.png", content_type: "image/pn
 instructor1.save
 puts "Instructor1 has been created successfully !"
 
-puts "Creating instructor2..."
+# puts "Creating instructor2..."
 
-instructor2 = Instructor.create!(
-  company_name: "Tracé",
-  address: "Tamarin, Mauritius",
-  car_type: ["Manual"],
-  work_phone_number: "6473292",
-  user: user2
-)
-file2 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572827/Drive%20Guru/instructor_2_ctpbi7.jpg")
-instructor2.photo.attach(io: file2, filename: "nes.png", content_type: "image/png")
-instructor2.save
-puts "Instructor2 has been created succesfully !"
+# instructor2 = Instructor.create!(
+#   company_name: "Tracé",
+#   address: "Tamarin, Mauritius",
+#   car_type: ["Manual"],
+#   work_phone_number: "6473292",
+#   user: user2
+# )
+# file2 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572827/Drive%20Guru/instructor_2_ctpbi7.jpg")
+# instructor2.photo.attach(io: file2, filename: "nes.png", content_type: "image/png")
+# instructor2.save
+# puts "Instructor2 has been created succesfully !"
 
 puts "Creating booking1..."
 booking1 = Booking.create(
