@@ -11,10 +11,10 @@ require 'open-uri'
 
 
 puts "Cleaning database..."
+Booking.destroy_all
 Review.destroy_all
 Instructor.destroy_all
 User.destroy_all
-Booking.destroy_all
 
 puts "Creating user1..."
 
