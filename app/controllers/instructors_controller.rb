@@ -1,5 +1,5 @@
 class InstructorsController < ApplicationController
-  before_action :set_instructor, only: %i[show edit update destroy :photo]
+  before_action :set_instructor, only: %i[show edit update destroy]
 
   def show
     @instructor = Instructor.find(params[:id])
