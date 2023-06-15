@@ -29,9 +29,9 @@
         <div class="col-sm-6 col-md-4">
           <a href="<%= instructor_path(instructor) %>">
             <div class="card mb-4 instructor-card" style="background-image: url('https://res.cloudinary.com/dujnrrugq/image/upload/v1686654090/instructor_card_big_lnynfz.png')">
-              <% if instructor.photo.key.present? %>
-                <%= cl_image_tag instructor.photo.key, height: 150, width: 150, crop: :fill, class: 'card-img-top instructor-image' %>
-              <% end %>
+              <%# <% if instructor.photo.key.present? %>
+                <%= cl_image_tag instructor.photo.key, height: 150, width: 150, crop: :fill, class: 'card-img-top instructor-image'%>
+              <%# <% end %>
               <div class="card-body">
                 <h5 class="card-title text-center"><%= instructor.company_name %></h5>
               </div>
