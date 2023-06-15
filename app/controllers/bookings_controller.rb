@@ -37,8 +37,9 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
-      redirect_to booking_path(@booking), notice: "Booking was successfully updated."
+      redirect_to @booking, notice: "Booking was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -62,6 +63,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date, :time, :instructor_id, :car_type)
+    params.require(:booking).permit(:date, :time, :instructor_id, :car_type, :booking_id)
   end
 end

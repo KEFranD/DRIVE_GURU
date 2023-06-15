@@ -35,6 +35,7 @@
                       <%= link_to booking_path(booking), data: { turbo_method: :delete, confirm: "Are you sure?" } do %>
                         <button class="border-radius text-center button-custom " >Delete</button>
                       <% end %>
+                      <%= link_to "Edit", edit_booking_path(booking[:id]), class: "button-edit" %>
                   </div>
                 </div>
               <% end %>
@@ -42,4 +43,4 @@
 <% end %>
 
 <p><%= link_to "Instructors", instructors_path, class: "button-instructors" %></p>
-<%= link_to "Edit", edit_booking_path(booking[:id]), class: "button-edit" %>
+<%# <%= link_to "Edit", edit_booking_path(@booking), class: "button-edit" %>
