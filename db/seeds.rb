@@ -124,17 +124,16 @@ puts "Instructor1 has been created successfully !"
 
 puts "Creating instructor2..."
 
-instructor2 = Instructor.create!(
-  company_name: "Tracé",
-  address: "Tamarin, Mauritius",
-  car_type: ["Manual"],
-  work_phone_number: "6473292",
-  user: user2
-)
-file2 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572827/Drive%20Guru/instructor_2_ctpbi7.jpg")
-instructor2.photo.attach(io: file2, filename: "nes.png", content_type: "image/png")
-instructor2.save
-puts "Instructor2 has been created succesfully !"
+# instructor2 = Instructor.create!(
+#   company_name: "Tracé",
+#   address: "Tamarin, Mauritius",
+#   car_type: ["Manual"],
+#   work_phone_number: "6473292"
+# )
+# file2 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686572827/Drive%20Guru/instructor_2_ctpbi7.jpg")
+# instructor2.photo.attach(io: file2, filename: "nes.png", content_type: "image/png")
+# instructor2.save
+# puts "Instructor2 has been created succesfully !"
 
 puts "Creating booking1..."
 booking1 = Booking.create(
@@ -155,19 +154,18 @@ puts "Booking1 has been created succesfully !"
 
 puts "Creating booking2..."
 
-booking2 = Booking.create(
-  date: Date.today + 20,
-  time: "1h",
-  user_id: 6,
-  instructor_id: 2,
-  car_type: ["Manual"]
-)
+# booking2 = Booking.create(
+#   date: Date.today + 20,
+#   time: "1h",
+#   user_id: 6,
+#   instructor_id: 2,
+#   car_type: ["Manual"]
+# )
 
+# Review.create!(
+#   rating: 1,
+#   description: "Bad experience!",
+#   booking: booking2
+# )
 
-Review.create!(
-  rating: 1,
-  description: "bad experience!",
-  booking: booking2
-)
-
-puts "Booking2 has been created succesfully !"
+# puts "Booking2 has been created succesfully !"
