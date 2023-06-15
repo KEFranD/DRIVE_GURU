@@ -29,7 +29,7 @@
         <div class="col-sm-6 col-md-4">
           <a href="<%= instructor_path(instructor) %>">
             <div class="card mb-4 instructor-card" style="background-image: url('https://res.cloudinary.com/dujnrrugq/image/upload/v1686654090/instructor_card_big_lnynfz.png')">
-              <% if instructor.photo.key.present? %>
+              <% if instructor.photo.attached? %>
                 <%= cl_image_tag instructor.photo.key, height: 150, width: 150, crop: :fill, class: 'card-img-top instructor-image' %>
               <% else %>
                 <%= image_tag 'user.svg', class: "avatar-large" %>
