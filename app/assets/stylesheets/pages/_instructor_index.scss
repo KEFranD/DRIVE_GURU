@@ -1,9 +1,20 @@
+.container--instructors {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
 .instructor-card {
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   border-radius: 4px;
-  padding: 10px;
   margin-bottom: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .instructor-card p strong {
@@ -20,10 +31,10 @@
 }
 
 
-.search-form {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
+// .search-form {
+//   margin-top: 20px;
+//   margin-bottom: 20px;
+// }
 
 .search-bar {
   padding: 10px;
@@ -33,16 +44,6 @@
   background-color: orange;
   color: white;
   margin: 0;
-}
-
-.instructor-card {
-  margin-bottom: 20px;
-  padding: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .instructor-card:hover {
