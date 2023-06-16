@@ -1,27 +1,25 @@
 <% if Booking.count < 1 %>
-  <div class="container col-10 container-form", style="background-color:#56CCF2">
+  <div class="col-11 container-form", style="background-color:#56CCF2">
     <h1 class="text-center py-4", style="color:#FFFFFF; font-size:30px;"><strong>All Bookings</strong></h1>
-      <div class="justify-content-center">
+      <div class="row justify-content-center">
         <div class="col-sm-8 mt-4" style="height:200px;">
-          <div class="no-results-message pb-0 mx-2", style="text-align:center">
+          <div class="no-results-message pb-0 mx-4", style="text-align:center">
             <p>You have no bookings. To add one click on the button below and choose from our selection of instructors.</p>
           </div>
         </div>
       </div>
   </div>
-   <div class=" ">
-      <div class="" >
+   <div class="row mb-4 justify-content-center">
+      <div class="d-flex justify-content-center" >
         <p><%= link_to "Instructors", instructors_path, class: "button-instructors" %></p>
       </div>
     </div>
-
 <% else %>
-  <div class="container col-10 container-form", style="background-color:#56CCF2">
+  <div class="col-11 container-form", style="background-color:#56CCF2">
     <h1 class="text-center py-4", style="color:#FFFFFF; font-size:30px;"><strong>All Bookings</strong></h1>
-      <div class="container">
               <% @bookings.each do |booking| %>
-                <div class="row mb-2 justify-content-center">
-                  <div class="col-10 border-radius shadow-bookings text-center pt-2", style="background-color:#FFEEB1">
+                <div class="row mb-4 justify-content-center">
+                  <div class="col-7 border-radius shadow-bookings pt-2", style="background-color:#FFFFFF">
                     <p style="color:#313131">
                       <strong>Date :</strong>     <%= booking.date %>
                       <br>
@@ -30,15 +28,20 @@
                       <strong>Car Type :</strong>  <%= booking.car_type.join("") %>
                     </p>
                   </div>
-                </div>
-                <div class="row mb-4 justify-content-center">
-                  <div class="d-flex justify-content-center" >
+                  <div class="col-2 flex-column d-flex align-items-center ">
+                    <div class="mt-2">
                       <%= link_to booking_path(booking), data: { turbo_method: :delete, confirm: "Are you sure?" } do %>
-                        <button class="border-radius text-center button-custom " >Delete</button>
-                      <% end %>
+                        <i class="fa-solid fa-trash" style="color: #000000;"></i>
+                        <% end %>
+                    </div>
+                    <div class="mt-4">
+                      <%= link_to  edit_booking_path(booking[:id]), { turbo_method: :edit, confirm: "Are you sure?" }  do %>
+                        <i class="fa-solid fa-pen" style="color: #000000;"></i>
+                        <% end %>
+                    </div>
                   </div>
                 </div>
               <% end %>
-      </div>
   </div>
+  <p><%= link_to "Instructors", instructors_path, class: "button-instructors" %></p>
 <% end %>

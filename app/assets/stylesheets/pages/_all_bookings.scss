@@ -2,9 +2,12 @@
   border: none;
   background-color:#FFEEB1;
   color: #313131;
-  padding:8px 16px;
+  padding:6px 14px;
   text-decoration: none;
-  transition-duration: 0.4s;
+  position: absolute;
+  top: 55%;
+  left: 80%;
+  transform: translate(-80%, -55%);
 }
 
 .button-instructors {
@@ -19,5 +22,9 @@
   left: 50%;
   transform: translate(-50%, -80%);
   font-size: 20px;
+}
 
+.button-container {
+  text-align: center;
+  margin-top: 100px;
 }

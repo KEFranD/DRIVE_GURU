@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_instructor, only: %i[show edit update new create]
+  before_action :set_instructor, only: %i[show update new create]
   helper_method :time_slots
 
   def index
@@ -33,11 +33,13 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @booking = Booking.find(params[:id])
   end
 
   def update
+    @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
-      redirect_to booking_path(@booking), notice: "Booking was successfully updated."
+      redirect_to @booking, notice: "Booking was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -61,6 +63,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date, :time, :instructor_id, :car_type)
+    params.require(:booking).permit(:date, :time, :instructor_id, :car_type, :booking_id)
   end
 end
