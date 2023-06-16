@@ -1,10 +1,20 @@
 <div class="container-instructor-show">
   <div class="center">
+
     <div class="hero-instructor">
       <p class="back-link">
         <%= link_to instructors_path, class: "button-back-color" do %>
           <i class="fa-solid fa-arrow-left fa-lg" style="color: #ffffff;"></i>
           <h1><%= @instructor.company_name %></h1>
+
+    <%= cl_image_tag @instructor.photo.key, class: 'rounded-circle'%>
+    <h1><%= @instructor.company_name %></h1>
+      <%# <div class="car_type_block"> %>
+      <div class="w-100">
+        <h3 class="left-align">Can Teach:</h3>
+        <% @instructor.car_type.each do |car_type| %>
+          <p> <%= car_type %> </p>
+
         <% end %>
       </p>
     </div>
