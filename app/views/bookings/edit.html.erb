@@ -1,20 +1,34 @@
-<h1>Edit Booking</h1>
+<h1 class="edit-booking-heading">Edit Booking</h1>
 
-<%= form_with(model: @booking, url: booking_path(@booking), method: :patch) do |form| %>
-  <%= form.label :date %>
-  <%= form.date_field :date %>
+<div class="edit-booking-form">
+  <%= form_with(model: @booking, url: booking_path(@booking), method: :patch) do |form| %>
+    <div class="form-group">
+      <%= form.label :date %>
+      <%= form.date_field :date, class: "form-control" %>
+    </div>
 
-  <%= form.label :user_id, "User" %>
-  <%= form.collection_select :user_id, User.all, :id, :email %>
+    <%# <div class="form-group">
+      <%= form.label :user_id, "User" %>
+      <%# <%= form.collection_select :user_id, User.all, :id, :email, { prompt: "Select a user" }, { class: "form-control" } %>
+    <%# </div> %>
 
-  <%= form.label :car_transmission %>
-  <%= form.text_field :car_transmission %>
+    <div class="form-group">
+      <%= form.label :car_type %>
+      <%= form.text_field :car_type, class: "form-control" %>
+    </div>
 
-  <%= form.label :time %>
-  <%= form.text_field :time %>
+    <div class="form-group">
+      <%= form.label :time %>
+      <%= form.text_field :time, class: "form-control" %>
+    </div>
 
-  <%= form.label :booked_user_id, "Booked User" %>
-  <%= form.collection_select :booked_user_id, User.all, :id, :email %>
+    <%# <div class="form-group">
+      <%= form.label :booked_user_id, "Booked User" %>
+      <%# <%= form.collection_select :booked_user_id, User.all, :id, :email, { prompt: "Select a booked user" }, { class: "form-control" } %>
+    <%# </div> %>
 
-  <%= form.submit "Update Booking" %>
-<% end %>
+    <div class="form-actions">
+      <%= form.submit "Update Booking", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
