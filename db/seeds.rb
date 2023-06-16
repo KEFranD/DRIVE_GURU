@@ -403,6 +403,7 @@ booking2 = Booking.create(
 booking2.save
 puts "Booking2 has been created succesfully !"
 
+
 puts "Creating review2 (user 11 write a review for instructor 1)..."
 review2 = Review.create(
   rating: 4,
@@ -591,6 +592,7 @@ review11 = Review.create(
 )
 review11.save
 puts "Review11 has been created succesfully !"
+
 
 puts "Creating booking12 (user 12 books instructor 7)..."
 booking12 = Booking.create(
