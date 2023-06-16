@@ -9,12 +9,18 @@ require 'date'
 require 'open-uri'
 # require_relative '../app/models/reviews'
 
-
 puts "Cleaning database..."
-Booking.destroy_all
 Review.destroy_all
+puts "review destroyed"
+Booking.destroy_all
+puts "bookings destroyed"
+
 Instructor.destroy_all
+puts "instructor destroyed"
+
 User.destroy_all
+puts "users destroyed"
+
 
 
 puts "Creating user1..."
@@ -369,11 +375,12 @@ puts "Instructor10 has been created successfully !"
 puts "Creating booking1 (user 11 books instructor 1)..."
 booking1 = Booking.create(
   date: Date.today + 10,
-  time: "30min",
+  time: "30min - 500rs",
   user: user11,
   instructor: instructor1,
   car_type: ["Automatic"]
 )
+booking1.save
 puts "Booking1 has been created succesfully !"
 
 puts "Creating review1 (user 11 write a review for instructor 1)..."
@@ -384,3 +391,283 @@ review1 = Review.create(
 )
 review1.save
 puts "Review1 has been created succesfully !"
+
+puts "Creating booking2 (user 11 books instructor 1)..."
+booking2 = Booking.create(
+  date: Date.today + 10,
+  time: "1h - 1000rs",
+  user: user11,
+  instructor: instructor1,
+  car_type: ["Automatic"]
+)
+booking2.save
+puts "Booking2 has been created succesfully !"
+
+puts "Creating review2 (user 11 write a review for instructor 1)..."
+review2 = Review.create(
+  rating: 4,
+  description: "Nice session !",
+  booking: booking2
+)
+review2.save
+puts "Review2 has been created succesfully !"
+
+puts "Creating booking3 (user 12 books instructor 2)..."
+booking3 = Booking.create(
+  date: Date.today + 30,
+  time: "30min - 500rs",
+  user: user12,
+  instructor: instructor2,
+  car_type: ["Manuel"]
+)
+booking3.save
+puts "Booking3 has been created succesfully !"
+
+puts "Creating review3 (user 12 write a review for instructor 2)..."
+review3 = Review.create(
+  rating: 5,
+  description: "Great instructor! Thank you !",
+  booking: booking3
+)
+review3.save
+puts "Review3 has been created succesfully !"
+
+puts "Creating booking4 (user 12 books instructor 2)..."
+booking4 = Booking.create(
+  date: Date.today + 20,
+  time: "2h - 1500rs",
+  user: user12,
+  instructor: instructor2,
+  car_type: ["Manuel"]
+)
+booking4.save
+puts "Booking4 has been created succesfully !"
+
+puts "Creating review4 (user 12 write a review for instructor 2)..."
+review4 = Review.create(
+  rating: 3,
+  description: "Not good today ...",
+  booking: booking4
+)
+review4.save
+puts "Review4 has been created succesfully !"
+
+puts "Creating booking5 (user 13 books instructor 3)..."
+booking5 = Booking.create(
+  date: Date.today + 20,
+  time: "1h - 1000rs",
+  user: user13,
+  instructor: instructor3,
+  car_type: ["Manuel"]
+)
+booking5.save
+puts "Booking5 has been created succesfully !"
+
+puts "Creating review5 (user 13 write a review for instructor 3)..."
+review5 = Review.create(
+  rating: 2,
+  description: "Not a good instructor!",
+  booking: booking5
+)
+review5.save
+puts "Review5 has been created succesfully !"
+
+puts "Creating booking6 (user 13 books instructor 3)..."
+booking6 = Booking.create(
+  date: Date.today + 10,
+  time: "2h - 1500rs",
+  user: user13,
+  instructor: instructor3,
+  car_type: ["Manuel"]
+)
+booking6.save
+puts "Booking6 has been created succesfully !"
+
+puts "Creating review6 (user 13 write a review for instructor 3)..."
+review6 = Review.create(
+  rating: 3,
+  description: "Better session",
+  booking: booking6
+)
+review6.save
+puts "Review6 has been created succesfully !"
+
+puts "Creating booking7 (user 14 books instructor 4)..."
+booking7 = Booking.create(
+  date: Date.today + 20,
+  time: "30min - 500rs",
+  user: user14,
+  instructor: instructor4,
+  car_type: ["Automatic"]
+)
+booking7.save
+puts "Booking7 has been created succesfully !"
+
+puts "Creating review7 (user 14 write a review for instructor 4)..."
+review7 = Review.create(
+  rating: 5,
+  description: "Great instructor!",
+  booking: booking7
+)
+review7.save
+puts "Review7 has been created succesfully !"
+
+puts "Creating booking8 (user 14 books instructor 4)..."
+booking8 = Booking.create(
+  date: Date.today + 30,
+  time: "1h - 1000rs",
+  user: user14,
+  instructor: instructor4,
+  car_type: ["Automatic"]
+)
+booking8.save
+puts "Booking8 has been created succesfully !"
+
+puts "Creating review8 (user 14 write a review for instructor 4)..."
+review8 = Review.create(
+  rating: 4,
+  description: "Great instructor!",
+  booking: booking1
+)
+review8.save
+puts "Review8 has been created succesfully !"
+
+puts "Creating booking9 (user 15 books instructor 5)..."
+booking9 = Booking.create(
+  date: Date.today + 20,
+  time: "2h - 1500rs",
+  user: user15,
+  instructor: instructor5,
+  car_type: ["Automatic"]
+)
+booking9.save
+puts "Booking9 has been created succesfully !"
+
+puts "Creating review9 (user 15 write a review for instructor 5)..."
+review9 = Review.create(
+  rating: 5,
+  description: "Very nice instructor!",
+  booking: booking9
+)
+review9.save
+puts "Review9 has been created succesfully !"
+
+puts "Creating booking10 (user 15 books instructor 5)..."
+booking10 = Booking.create(
+  date: Date.today + 10,
+  time: "1h - 1000rs",
+  user: user15,
+  instructor: instructor5,
+  car_type: ["Automatic"]
+)
+booking10.save
+puts "Booking10 has been created succesfully !"
+
+puts "Creating review10 (user 15 write a review for instructor 5)..."
+review10 = Review.create(
+  rating: 4,
+  description: "Great instructor!",
+  booking: booking10
+)
+review10.save
+puts "Review10 has been created succesfully !"
+
+puts "Creating booking11 (user 11 books instructor 6)..."
+booking11 = Booking.create(
+  date: Date.today + 20,
+  time: "30min - 500rs",
+  user: user11,
+  instructor: instructor6,
+  car_type: ["Manuel"]
+)
+booking11.save
+puts "Booking11 has been created succesfully !"
+
+puts "Creating review11 (user 11 write a review for instructor 6)..."
+review11 = Review.create(
+  rating: 4,
+  description: "Great instructor!",
+  booking: booking11
+)
+review11.save
+puts "Review11 has been created succesfully !"
+
+puts "Creating booking12 (user 12 books instructor 7)..."
+booking12 = Booking.create(
+  date: Date.today + 10,
+  time: "30min - 500rs",
+  user: user12,
+  instructor: instructor7,
+  car_type: ["Manuel"]
+)
+booking12.save
+puts "Booking12 has been created succesfully !"
+
+puts "Creating review12 (user 12 write a review for instructor 7)..."
+review12 = Review.create(
+  rating: 1,
+  description: "Bad instructor!",
+  booking: booking1
+)
+review12.save
+puts "Review12 has been created succesfully !"
+
+puts "Creating booking13 (user 12 books instructor 8)..."
+booking13 = Booking.create(
+  date: Date.today + 10,
+  time: "30min - 500rs",
+  user: user12,
+  instructor: instructor8,
+  car_type: ["Manuel"]
+)
+booking13.save
+puts "Booking13 has been created succesfully !"
+
+puts "Creating review13 (user 12 write a review for instructor 8)..."
+review13 = Review.create(
+  rating: 4,
+  description: "Great instructor!",
+  booking: booking13
+)
+review13.save
+puts "Review13 has been created succesfully !"
+
+puts "Creating booking14 (user 12 books instructor 9)..."
+booking14 = Booking.create(
+  date: Date.today + 10,
+  time: "1h - 1000rs",
+  user: user12,
+  instructor: instructor9,
+  car_type: ["Automatic"]
+)
+booking14.save
+puts "Booking14 has been created succesfully !"
+
+puts "Creating review14 (user 12 write a review for instructor 9)..."
+review14 = Review.create(
+  rating: 4,
+  description: "Great instructor!",
+  booking: booking14
+)
+review14.save
+puts "Review14 has been created succesfully !"
+
+puts "Creating booking15 (user 15 books instructor 10)..."
+booking15 = Booking.create(
+  date: Date.today + 20,
+  time: "2h - 1500rs",
+  user: user12,
+  instructor: instructor10,
+  car_type: ["Manuel"]
+)
+booking15.save
+puts "Booking15 has been created succesfully !"
+
+puts "Creating review15 (user 12 write a review for instructor 10)..."
+review15 = Review.create(
+  rating: 4,
+  description: "Great instructor!",
+  booking: booking15
+)
+review15.save
+puts "Review15 has been created succesfully !"

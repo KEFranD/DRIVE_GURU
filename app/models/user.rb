@@ -6,7 +6,7 @@ class User < ApplicationRecord
   # has_many :received_bookings, foreign_key: :booked_user_id, class_name: 'Booking'
 
   # Reviews written by this user
-  has_many :reviews
+  # has_many :reviews, dependent: :destroy
 
   # Messages sent by this user
   has_many :sent_messages, foreign_key: :sender_id, class_name: 'Message'

@@ -13,8 +13,5 @@
   <%= form.label :time %>
   <%= form.text_field :time %>
 
-  <%= form.label :instructor_id, "Instructor" %>
-  <%= form.collection_select :instructor_id, Instructor.all, :id, :email %>
-
   <%= form.submit "Update Booking" %>
 <% end %>
