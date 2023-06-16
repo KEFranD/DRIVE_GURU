@@ -226,7 +226,7 @@ puts "User15 has been created succesfully !"
 
 
 
-puts "Creating instructor1..."
+puts "Creating instructor1 (user 1)..."
 
 instructor1 = Instructor.create!(
   company_name: "Roulé",
@@ -240,7 +240,7 @@ instructor1.photo.attach(io: file1, filename: "nes.png", content_type: "image/pn
 instructor1.save
 puts "Instructor1 has been created successfully !"
 
-puts "Creating instructor2..."
+puts "Creating instructor2 (user 2)..."
 
 instructor2 = Instructor.create!(
   company_name: "Apex",
@@ -254,10 +254,10 @@ instructor2.photo.attach(io: file2, filename: "nes.png", content_type: "image/pn
 instructor2.save
 puts "Instructor2 has been created successfully !"
 
-puts "Creating instructor3..."
+puts "Creating instructor3 (user 3)..."
 
 instructor3 = Instructor.create!(
-  company_name: "Driven 2 Success",
+  company_name: "Little Wheel",
   address: "Curepipe, Mauritius",
   car_type: ["Automatic", "Manuel"],
   work_phone_number: "7329287",
@@ -268,7 +268,7 @@ instructor3.photo.attach(io: file3, filename: "nes.png", content_type: "image/pn
 instructor3.save
 puts "Instructor3 has been created successfully !"
 
-puts "Creating instructor4..."
+puts "Creating instructor4 (user 4)..."
 
 instructor4 = Instructor.create!(
   company_name: "Cool Drive",
@@ -282,10 +282,10 @@ instructor4.photo.attach(io: file4, filename: "nes.png", content_type: "image/pn
 instructor4.save
 puts "Instructor4 has been created successfully !"
 
-puts "Creating instructor5..."
+puts "Creating instructor5 (user 5)..."
 
 instructor5 = Instructor.create!(
-  company_name: "The Driving Tutors",
+  company_name: "Driving Tutors",
   address: "Moka, Mauritius",
   car_type: ["Automatic"],
   work_phone_number: "8383928",
@@ -296,7 +296,7 @@ instructor5.photo.attach(io: file5, filename: "nes.png", content_type: "image/pn
 instructor5.save
 puts "Instructor5 has been created successfully !"
 
-puts "Creating instructor6..."
+puts "Creating instructor6 (user 6)..."
 
 instructor6 = Instructor.create!(
   company_name: "Drive X",
@@ -310,7 +310,7 @@ instructor6.photo.attach(io: file6, filename: "nes.png", content_type: "image/pn
 instructor6.save
 puts "Instructor6 has been created successfully !"
 
-puts "Creating instructor7..."
+puts "Creating instructor7 (user 7)..."
 
 instructor7 = Instructor.create!(
   company_name: "Ace Auto",
@@ -324,7 +324,7 @@ instructor7.photo.attach(io: file7, filename: "nes.png", content_type: "image/pn
 instructor7.save
 puts "Instructor7 has been created successfully !"
 
-puts "Creating instructor8..."
+puts "Creating instructor8 (user 8)..."
 
 instructor8 = Instructor.create!(
   company_name: "Beep Beep",
@@ -338,7 +338,7 @@ instructor8.photo.attach(io: file8, filename: "nes.png", content_type: "image/pn
 instructor8.save
 puts "Instructor8 has been created successfully !"
 
-puts "Creating instructor9..."
+puts "Creating instructor9 (user 9)..."
 
 instructor9 = Instructor.create!(
   company_name: "Learn Me",
@@ -352,7 +352,7 @@ instructor9.photo.attach(io: file9, filename: "nes.png", content_type: "image/pn
 instructor9.save
 puts "Instructor9 has been created successfully !"
 
-puts "Creating instructor10..."
+puts "Creating instructor10 (user 10)..."
 
 instructor10 = Instructor.create!(
   company_name: "J & K",
@@ -366,7 +366,7 @@ instructor10.photo.attach(io: file010, filename: "nes.png", content_type: "image
 instructor10.save
 puts "Instructor10 has been created successfully !"
 
-puts "Creating booking1..."
+puts "Creating booking1 (user 11 books instructor 1)..."
 booking1 = Booking.create(
   date: Date.today + 10,
   time: "30min",
@@ -374,29 +374,13 @@ booking1 = Booking.create(
   instructor: instructor1,
   car_type: ["Automatic"]
 )
+puts "Booking1 has been created succesfully !"
 
-Review.create!(
+puts "Creating review1 (user 11 write a review for instructor 1)..."
+review1 = Review.create(
   rating: 4,
   description: "Great instructor!",
   booking: booking1
 )
-
-puts "Booking1 has been created succesfully !"
-
-puts "Creating booking2..."
-
-# booking2 = Booking.create(
-#   date: Date.today + 20,
-#   time: "1h",
-#   user_id: 6,
-#   instructor_id: 2,
-#   car_type: ["Manual"]
-# )
-
-# Review.create!(
-#   rating: 1,
-#   description: "Bad experience!",
-#   booking: booking2
-# )
-
-# puts "Booking2 has been created succesfully !"
+review1.save
+puts "Review1 has been created succesfully !"

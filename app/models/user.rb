@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   # Bookings made by this user
-  has_many :bookings, foreign_key: :booker_id, class_name: 'Booking'
+  has_many :bookings, dependent: :destroy # , foreign_key: :booker_id, class_name: 'Booking'
 
   # Bookings received by this user
-  has_many :received_bookings, foreign_key: :booked_user_id, class_name: 'Booking'
+  # has_many :received_bookings, foreign_key: :booked_user_id, class_name: 'Booking'
 
   # Reviews written by this user
   has_many :reviews
@@ -14,7 +14,7 @@ class User < ApplicationRecord
   # Messages received by this user
   has_many :received_messages, foreign_key: :receiver_id, class_name: 'Message'
 
-  has_many :user_bookings, class_name: 'Booking', foreign_key: 'user_id'
+  # has_many :user_bookings, class_name: 'Booking', foreign_key: 'user_id'
 
   has_one :instructor
 
