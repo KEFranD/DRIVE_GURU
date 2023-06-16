@@ -1,0 +1,18 @@
+.mapboxgl-map {
+  margin-top: 150px;
+}
+
+.mapboxgl-popup-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 250px;
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
