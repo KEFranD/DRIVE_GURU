@@ -7,7 +7,8 @@ class InstructorsController < ApplicationController
     @markers = []
     marker = {
       lat: @instructor.latitude,
-      lng: @instructor.longitude
+      lng: @instructor.longitude,
+      info_window_html: render_to_string(partial: "info_window", locals: {instructor: @instructor})
     }
     @markers << marker
     @bookings = @instructor.bookings if @instructor.bookings.present?

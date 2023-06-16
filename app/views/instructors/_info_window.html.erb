@@ -1,0 +1,11 @@
+<% if instructor.photo.attached? %>
+  <%= cl_image_tag instructor.photo.key, height: 40, width: 40, crop: :fill, class: 'card-img-top instructor-image' %>
+<% else %>
+  <%= image_tag 'user.svg', class: "avatar-large" %>
+<% end %>
+<div class="mapbox-details-container">
+  <h5>Can Teach:</h5>
+  <p><%= instructor.car_type[0] %></p>
+  <h5>Phone Number:</h5>
+  <p><%= instructor.work_phone_number %></p>
+</div>
