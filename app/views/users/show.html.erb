@@ -1,17 +1,27 @@
-<h1>User Details</h1>
-
-<% if @user.photo.key? %>
-  <%= cl_image_tag @user.photo.key, height: 200, width: 200, crop: :fill, class: 'rounded-circle' %>
-<% else %>
-  <p>No photo available</p>
-<% end %>
-
-<%# <%= cl_image_tag @user.photo.key, height: 200, width: 200, crop: :fill, class: 'rounded-circle' %> 
-<p><strong>Name:</strong> <%= @user.full_name %></p>
-<p><strong>Email:</strong> <%= @user.email %></p>
-<p><strong>Phone Number:</strong> <%= @user.phone_number %></p>
-
-<%= link_to "Edit Profile", edit_user_registration_path(params[:id]), class: "btn btn-primary" %>
-
-<%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-primary" %>
-<%# <%= link_to "Edit Profile", edit_user_registration_path(params[:id]), class: "btn btn-primary" %>
+<h1 class="user-profile-title">User Profile</h1>
+<div class="user-details" style="text-align: center;">
+  <% if @user.photo.key? %>
+    <%= cl_image_tag @user.photo.key, height: 150, width: 150, crop: :fill, class: 'rounded-circle' %>
+  <% else %>
+    <p>No photo available</p>
+  <% end %>
+  <div class="profile-details">
+    <div class="user-info">
+      <p class="field-label"><strong>Name</strong></p>
+      <div class="field-container"><%= @user.full_name %></div>
+    </div>
+    <div class="user-info">
+      <p class="field-label"><strong>Email</strong></p>
+      <div class="field-container"><%= @user.email %></div>
+    </div>
+    <div class="user-info">
+      <p class="field-label"><strong>Phone Number</strong></p>
+      <div class="field-container"><%= @user.phone_number %></div>
+    </div>
+    <div class="button-container">
+      <%= link_to "Edit Profile", edit_user_registration_path(params[:id]), class: "btn btn-primary" %>
+      <div class="button-spacing"></div>
+      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
