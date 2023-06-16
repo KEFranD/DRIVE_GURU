@@ -8,13 +8,15 @@
   <% else %>
     <%= simple_form_for [@booking, @review] do |f| %>
       <%= f.input :description %>
+    <%= f.input :description %>
 
-      <div class="rating-input">
-        <% (1..5).each do |rating| %>
-          <%= label_tag "rating_#{rating}", nil do %>
-            <%= radio_button_tag 'review[rating]', rating %>
-            <%= content_tag(:span, '', class: 'star', data: { rating: rating }) %>
-          <% end %>
+    <%# <%= f.input :rating, collection: 1..5, as: :radio_buttons %>
+
+    <div class="rating-input">
+      <% (1..5).each do |rating| %>
+        <%= label_tag "rating_#{rating}", nil do %>
+          <%= radio_button_tag 'review[rating]', rating %>
+          <%= content_tag(:span, '', class: 'star', data: { rating: rating }) %>
         <% end %>
       </div>
 
