@@ -3,8 +3,11 @@
     <h1>New Review</h1>
   </div>
 
-  <%= simple_form_for [@booking, @review] do |f| %>
-
+  <% if @booking.review.present? %>
+    <p>A review has already been submitted for this booking.</p>
+  <% else %>
+    <%= simple_form_for [@booking, @review] do |f| %>
+      <%= f.input :description %>
     <%= f.input :description %>
 
     <%# <%= f.input :rating, collection: 1..5, as: :radio_buttons %>
@@ -15,9 +18,9 @@
           <%= radio_button_tag 'review[rating]', rating %>
           <%= content_tag(:span, '', class: 'star', data: { rating: rating }) %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
 
-    <%= f.submit class: "btn btn-primary" "Create Review" %>
+      <%= f.submit class: "btn btn-primary", value: "Create Review" %>
+    <% end %>
   <% end %>
 </div>
