@@ -1,6 +1,6 @@
 
-<div class="container">
-  <div class="row justify-content-center mt-5">
+<div class="container--instructors">
+  <div class="row justify-content-center">
     <div class="col-sm-8">
       <%= form_with url: instructors_path, method: :get, class: "search-form" do %>
         <div class="d-flex">
@@ -17,7 +17,7 @@
 
   <% if @instructors.empty? %>
     <div class="row justify-content-center">
-      <div class="col-sm-8 mt-4">
+      <div class="col-sm-8">
         <div class="no-results-message">
           <p>Sorry, no instructors are available in this region.</p>
         </div>
@@ -28,9 +28,11 @@
       <% @instructors.each do |instructor| %>
         <div class="col-sm-6 col-md-4">
           <a href="<%= instructor_path(instructor) %>">
-            <div class="card mb-4 instructor-card" style="background-image: url('https://res.cloudinary.com/dujnrrugq/image/upload/v1686654090/instructor_card_big_lnynfz.png')">
-              <% if instructor.photo.key.present? %>
-                <%= cl_image_tag instructor.photo.key, height: 150, width: 150, crop: :fill, class: 'card-img-top instructor-image' %>
+            <div class="card instructor-card" style="background-image: url('https://res.cloudinary.com/dujnrrugq/image/upload/v1686654090/instructor_card_big_lnynfz.png')">
+              <% if instructor.photo.attached? %>
+                <%= cl_image_tag instructor.photo.key, class: 'card-img-top instructor-image' %>
+              <% else %>
+                <%= image_tag 'user.svg', class: "avatar-large" %>
               <% end %>
               <div class="card-body">
                 <h5 class="card-title text-center"><%= instructor.company_name %></h5>
