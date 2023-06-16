@@ -1,27 +1,30 @@
-<div class=" col-10 container-form", style="background-color:#56CCF2">
-  <h1 class="text-center py-4", style="color:#FFFFFF">New Booking</h1>
+<div class="container-fluid d-flex align-items-center justify-content-center" style="height: 100vh;">
+  <div class="col-10 col-sm-8 col-md-6 col-lg-4 container-form" style="background-color: #56CCF2;">
+    <h1 class="text-center py-4" style="color: #FFFFFF;">New Booking</h1>
 
-      <%= simple_form_for([@instructor, @booking], data: { controller: 'flatpickr' })  do |f| %>
-        <div class="row mb-4 text-center justify-content-center">
-          <div class="col-10 border-radius", style="background-color:#FFEEB1">
-            <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "date" }, class: "center-text-date" } %>
-          </div>
+    <%= simple_form_for([@instructor, @booking], data: { controller: 'flatpickr' }) do |f| %>
+      <div class="row mb-4">
+        <div class="col-10 mx-auto border-radius" style="background-color: #FFEEB1;">
+          <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "date" }, class: "center-text-date" } %>
         </div>
-        <div class="row mb-4 text-center justify-content-center">
-          <div class="col-10 border-radius", style="background-color:#FFEEB1">
-            <%= f.input :time, collection: ['30 min - 500rs', '1 h - 1000rs', '2 h - 1500rs'], selected: "", input_html: { class: "center-text-time" } %>
-          </div>
-        </div>
-        <div class="row mb-4 text-center justify-content-center">
-          <div class="col-10 border-radius", style="background-color:#FFEEB1">
-            <%= f.input :car_type, collection: @instructor.car_type, selected: "", input_html: { class: "center-text-car" } %>
-          </div>
-        </div>
-      <div class="py-2 row mb-4 text-center justify-content-center">
-      <div class="col-9">
-        <%= f.submit %>
-      </div>
-      </div>
-      <% end %>
 
+      </div>
+      <div class="row mb-4">
+        <div class="col-10 mx-auto border-radius" style="background-color: #FFEEB1;">
+          <%= f.input :time, collection: ['30 min', '1 h', '2 h'], selected: "", input_html: { class: "center-text-time" } %>
+
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-10 mx-auto border-radius" style="background-color: #FFEEB1;">
+          <%= f.input :car_type, collection: @instructor.car_type, selected: "", input_html: { class: "center-text-car" } %>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <%= f.submit %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
