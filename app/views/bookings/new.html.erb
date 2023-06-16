@@ -7,10 +7,12 @@
         <div class="col-10 mx-auto border-radius" style="background-color: #FFEEB1;">
           <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "date" }, class: "center-text-date" } %>
         </div>
+
       </div>
       <div class="row mb-4">
         <div class="col-10 mx-auto border-radius" style="background-color: #FFEEB1;">
           <%= f.input :time, collection: ['30 min', '1 h', '2 h'], selected: "", input_html: { class: "center-text-time" } %>
+
         </div>
       </div>
       <div class="row mb-4">
