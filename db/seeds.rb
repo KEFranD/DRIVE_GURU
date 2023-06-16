@@ -152,7 +152,7 @@ Review.create!(
 
 puts "Booking1 has been created succesfully !"
 
-puts "Creating booking2..."
+# puts "Creating booking2..."
 
 # booking2 = Booking.create(
 #   date: Date.today + 20,
