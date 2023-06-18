@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "checkout", to: "pages#checkout"
   get "status", to: "pages#status"
-
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
   # get "booking_confirmation/:id", to: "bookings#confirmation", as: "booking_confirmation"
 
 

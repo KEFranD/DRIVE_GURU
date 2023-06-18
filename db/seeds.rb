@@ -183,7 +183,7 @@ user12 = User.create(
   last_name: "Franklin",
   email: "melodyfranklin@mail.com",
   phone_number: "73822929",
-  password: 223456
+  password: 123456
 )
 file12 = URI.open("https://res.cloudinary.com/dblraorbo/image/upload/v1686900454/Drive%20Guru/seed/gros-plan-elegante-jeune-femme-afro-americaine-recherche-amicale-cheveux-raides-droits-fonces-ayant-regard-joyeux-heureux-posant_344912-1016_ptue5y.avif")
 user12.photo.attach(io: file12, filename: "nes.png", content_type: "image/png")
