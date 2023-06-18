@@ -1,145 +1,93 @@
-.container {
-  padding: 10px;
-  margin-bottom: 10px;
+.checkout-wrapper {
+  height: 100vh;
   width: 100%;
+  background-color: #b5a4a4;
 }
 
-.checkout-banner {
-  background-color: #e8e0d9;
+.checkout-container {
+  width: 290px;
+  height: auto;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffc966;
+  padding: 35px 10px;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 4px;
-  // background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.7)), url(https://res.cloudinary.com/df6aeru2i/image/upload/v1686309679/robo_ubfkjc.jpg);
-  background-size: 400px 450px;
-  background-repeat: no-repeat;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  border: 1px solid rgba($color: #ec590a, $alpha: 0.3);
+  box-shadow: rgba(236, 89, 10, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  color: #5e5656 !important;
 
-.text-overlay {
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: rgb(6, 6, 6);
-  text-align: center;
-  padding:5px;
-}
-
-.tarif {
-  margin-bottom: 10px;
-  text-align: right;
-  padding-right: 10px;
-  // padding: 15px;
-  width: 100%;
-  color: rgb(234, 99, 31);
-}
-
-.tarif p {
-  // margin: 8px;
-  padding: 4px;
-  color: rgb(252, 252, 252);
-  text-align: right;
-  display: block;
-}
-
-.payment-container {
-  color: white;
-}
-
-.payment-container label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.btn-container {
-  text-align: center;
-  line-height: normal;
-}
-
-.btn {
-  // display: inline-block;
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: #fff;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-.btn-primary {
-  background-color: #007bff;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-}
-
-/* Media Queries */
-@media (max-width: 600px) {
-  .container {
-    padding: 5px;
+  .checkout-title {
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: underline;
   }
 
+  .payment-methods {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 
-  .text-overlay {
-    font-size: 20px;
-  }
+    .method-title {
+      font-size: 18px;
+    }
 
-  .tarif {
-    width: 50%;
-    margin-left: auto;
-    text-align: left !important;
+    .payments-container {
+      width: 100%;
+      display: flex;
+      gap: 20px;
 
-    p {
-      text-align-last: left;
+      .method {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+
+        input[type="radio"] {
+          opacity: 0;
+          width: 0;
+          height: 0;
+
+          &:checked + label::before {
+            border-color: #6691ff;
+            background-image: radial-gradient(#6691ff 50%, transparent 70%);
+            transform: scale(0.8);
+          }
+        }
+
+
+        label {
+          position: relative;
+          padding-left: 25px;
+          font-size: 16px;
+          cursor: pointer;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 0;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #aaa;
+            border-radius: 50%;
+          }
+
+          &:hover::before {
+            border-color: #666;
+          }
+        }
+      }
     }
   }
-
-  .btn {
-    padding: 6px 12px;
-  }
-
-  .tarif.p input[type="radio"] {
-    display: none;
-  }
-
-  .tarif.p label {
-    position: relative;
-    padding-left: 25px;
-    cursor: pointer;
-  }
-
-  .tarif.p label:before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    border: 2px solid #ccc;
-    background-color: #fff;
-  }
-
-  .tarif.p input[type="radio"]:checked + label:before {
-    background-color: #FF7A00;
-    border-color: #FF7A00;
-  }
-
-  .tarif.p label:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 4px;
-    transform: translateY(-50%) scale(0);
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #fff;
-    transition: transform 0.2s ease;
-  }
-
-  .tarif.p input[type="radio"]:checked + label:after {
-    transform: translateY(-50%) scale(1);
-  }
-
-
 }
