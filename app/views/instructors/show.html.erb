@@ -22,10 +22,10 @@
       <% else %>
         <% @reviews.each do |review| %>
           <div class="review-block">
-            <p><%= review.booking.user.first_name %></p>
-            <p>
-              <%= review.rating %>
-            </p>
+            <p><strong><%= review.booking.user.first_name %></strong></p>
+            <% review.rating.to_i.times do %>
+              <i class="fa-solid fa-star" style="color: #ffdd00;"></i>
+            <% end %>
             <p><%= review.description %></p>
           </div>
         <% end %>
