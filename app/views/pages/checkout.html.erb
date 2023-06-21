@@ -1,43 +1,27 @@
-<div class="container mx auto">
-  <div class="checkout-banner">
-    <div class="text-overlay">
-      Checkout
+<div class="checkout-wrapper">
+  <div class="checkout-container">
+    <span class="checkout-title">Checkout</span>
+
+    <div class="payment-methods">
+      <span class="method-title">Methods of Payment :</span>
+      <div class="payments-container">
+        <div class="method">
+          <input type="radio" name="payment" id="Juice" value = "Juice">
+          <label for="Juice">Juice</label>
+        </div>
+
+        <div class="method">
+          <input type="radio" name="payment" id="Card" value = "Card">
+          <label for="Card">Card</label>
+        </div>
+
+        <div class="method">
+          <input type="radio" name="payment" id="Cash" value = "Cash">
+          <label for="Cash">Cash</label>
+        </div>
+      </div>
     </div>
-    <form class="row g-3">
-      <div class="tarif">
 
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-        Tarif
-      </button>
-      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-        <li><a class="dropdown-item active" href="#">Each 30m - RS500</a></li>
-        <li><a class="dropdown-item" href="#">Each 1H - RS1000</a></li>
-        <li><a class="dropdown-item" href="#">Each 2H - RS2000</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <%# <li><a class="dropdown-item" href="#">Separated link</a></li> %>
-      </ul>
-    <%# </div>
-        <p>Each 30m - RS500</p>
-        <p>Each 1H - RS1000</p>
-        <p>Each 2H - RS2000</p>
-      </div> %>
-
-      <div class="payment-container ">
-      </div>
-      <div class= "tarif p">
-        <input type="radio" id="cash" name="payment_method" value="cash">
-        <label for="cash">Cash</label><br>
-        <input type="radio" id="card" name="payment_method" value="card">
-        <label for="card">Card Payment</label><br>
-
-        <input type="radio" id="juice" name="payment_method" value="juice">
-        <label for="juice">Juice</label>
-      </div>
-
-      <div class="btn-container">
-        <a href="/status"  class="btn btn-warning">Checkout</a>
-      </div>
-    </form>
+    <%= link_to "Checkout", status_path, class: "btn btn-primary" %>
   </div>
- </div>
+</div>
