@@ -7,19 +7,8 @@
     <p>A review has already been submitted for this booking.</p>
   <% else %>
     <%= simple_form_for [@booking, @review] do |f| %>
-      <%= f.input :description %>
-
-      <%# <%= f.input :rating, collection: 1..5, as: :radio_buttons %>
-
-      <div class="rating-input">
-        <% (1..5).each do |rating| %>
-          <%= label_tag "rating_#{rating}", nil do %>
-            <%= radio_button_tag 'review[rating]', rating %>
-            <%= content_tag(:span, '', class: 'star', data: { rating: rating }) %>
-          <% end %>
-        <% end %>
-      </div>
-
+      <%= f.input :description, label: "Describe your experience" %>
+      <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
       <%= f.submit class: "btn btn-primary", value: "Create Review" %>
     <% end %>
   <% end %>
