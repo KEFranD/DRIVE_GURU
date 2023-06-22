@@ -1,15 +1,17 @@
-<div class="container mx-auto" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">
-  <div class="title">
-    <h1>New Review</h1>
+<div class="container mx-auto" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color:#56CCF2">
+  <div class="title" style="color: #FFFFFF;">
+    <h1 style="font-size: 30px">New Review</h1>
   </div>
 
   <% if @booking.review.present? %>
     <p>A review has already been submitted for this booking.</p>
   <% else %>
-    <%= simple_form_for [@booking, @review] do |f| %>
-      <%= f.input :description, label: "Describe your experience" %>
-      <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-      <%= f.submit class: "btn btn-primary", value: "Create Review" %>
-    <% end %>
+    <div style="font-size: 18px">
+      <%= simple_form_for [@booking, @review] do |f| %>
+        <%= f.input :description, label: "Describe your experience" %>
+        <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
+        <%= f.submit class: "btn btn-primary", value: "Create Review" %>
+      <% end %>
+    </div>
   <% end %>
 </div>
