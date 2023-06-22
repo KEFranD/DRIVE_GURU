@@ -2,7 +2,7 @@
 //   background-color: #f2f2f2;
 // }
 $iphone-8-pro-width: 375px;
-$iphone-8-pro-height: 667px;
+$iphone-8-pro-height: 623px;
 
 .container--status {
   width: $iphone-8-pro-width;
@@ -78,4 +78,9 @@ $iphone-8-pro-height: 667px;
     margin-top: 70px;
     font-size: 12px;
   }
+}
+
+.img-success {
+  width: 67px;
+  padding-bottom: 29px;
 }
