@@ -75,7 +75,7 @@
     }
 
     .terminal h1 {
-      font-size: 90px;
+      font-size: 100px;
     }
 
     .output {
@@ -104,6 +104,18 @@
     .errorcode {
       color: white;
     }
+
+    .hidden-message {
+      display: none;
+      color: white;
+      text-shadow: none;
+      font-size: 45px;
+      color: rgba(128, 255, 128, 0.8);
+      text-shadow: 0 0 1px rgba(51, 255, 51, 0.4), 0 0 2px rgba(255, 255, 255, 0.8);
+    }
+    .hidden-message span {
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -113,7 +125,22 @@
     <h1>Error <span class="errorcode">404</span></h1>
     <br>
     <p class="output">You seem lost...</p>
+    <p class="output">This page does not exist.</p>
     <p class="output">Please <a href="/">return to the homepage</a>.</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p class="hidden-message"> > Congrats <span>DriveGuru</span> team! <br><br> > <span>Alison</span>, <span>Francesca</span>, <span>Leo</span>, and <span>Ved</span>, your hard work and dedication have made this project possible! <br><br> > Also, thank you to all the <span>teachers</span> who helped us during this journey!</p>
   </div>
+
+  <script>
+    setTimeout(function() {
+      var hiddenMessage = document.querySelector('.hidden-message');
+      hiddenMessage.style.display = 'block';
+    }, 3000);
+  </script>
 </body>
 </html>
