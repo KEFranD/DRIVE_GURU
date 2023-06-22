@@ -94,7 +94,16 @@ body {
   font-weight: bold;
 }
 
-.btn-primary{
- padding-left: 20px;
- background-color: red;
+.btn.btn-primary {
+  padding: 10px 20px;
+  font-size: 16px; 
+}
+
+.box {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  width: 80%;
+  max-height: 562px;
+  margin: -27px;
 }
