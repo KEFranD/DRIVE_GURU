@@ -36,6 +36,11 @@
                           <i class="fa-solid fa-pen" style="color: #000000;"></i>
                           <% end %>
                       </div>
+                      <div class="mt-4">
+                        <%= link_to new_booking_review_path(booking[:id]) do %>
+                        <i class="fa-solid fa-star" style="color: #000000;"></i>
+                      <% end %>
+                      </div>
                     </div>
                   </div>
                 <% end %>
