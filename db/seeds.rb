@@ -372,30 +372,12 @@ instructor10.photo.attach(io: file010, filename: "nes.png", content_type: "image
 instructor10.save
 puts "Instructor10 has been created successfully !"
 
-puts "Creating booking1 (user 11 books instructor 1)..."
-booking1 = Booking.create(
-  date: Date.today + 10,
-  time: "30min - 500rs",
-  user: user11,
-  instructor: instructor1,
-  car_type: ["Automatic"]
-)
-booking1.save
-puts "Booking1 has been created succesfully !"
 
-puts "Creating review1 (user 11 write a review for instructor 1)..."
-review1 = Review.create(
-  rating: 4,
-  description: "Great instructor!",
-  booking: booking1
-)
-review1.save
-puts "Review1 has been created succesfully !"
 
 puts "Creating booking2 (user 11 books instructor 1)..."
 booking2 = Booking.create(
-  date: Date.today + 10,
-  time: "1h - 1000rs",
+  date: Date.today + 22,
+  time: "2h - 1500rs",
   user: user11,
   instructor: instructor1,
   car_type: ["Automatic"]
@@ -528,7 +510,7 @@ puts "Creating review8 (user 14 write a review for instructor 4)..."
 review8 = Review.create(
   rating: 4,
   description: "Great instructor!",
-  booking: booking1
+  booking: booking8
 )
 review8.save
 puts "Review8 has been created succesfully !"
@@ -609,7 +591,7 @@ puts "Creating review12 (user 12 write a review for instructor 7)..."
 review12 = Review.create(
   rating: 1,
   description: "Bad instructor!",
-  booking: booking1
+  booking: booking12
 )
 review12.save
 puts "Review12 has been created succesfully !"
@@ -673,3 +655,24 @@ review15 = Review.create(
 )
 review15.save
 puts "Review15 has been created succesfully !"
+
+puts "Creating booking16 (user 11 books instructor 1)..."
+booking16 = Booking.create(
+  date: Date.today + 10,
+  time: "1h - 1000rs",
+  user: user11,
+  instructor: instructor1,
+  car_type: ["Automatic"]
+)
+booking16.save
+puts "Booking16 has been created succesfully !"
+
+
+puts "Creating review16 (user 11 write a review for instructor 1)..."
+review16 = Review.create(
+  rating: 3,
+  description: "Not bad !",
+  booking: booking16
+)
+review16.save
+puts "Review16 has been created succesfully !"
