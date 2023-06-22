@@ -16,7 +16,7 @@
       </div>
     </div>
   <% else %>
-    <div class="col-12 container-form", style="background-color:#56CCF2">
+    <div class="col-12 container-form", style="background-color:#56CCF2; padding-bottom: 60px;">
       <h1 class="text-center py-4", style="color:#FFFFFF; font-size:30px;"><strong>All Bookings</strong></h1>
                 <% @bookings.each do |booking| %>
                   <div class="row mb-4 justify-content-center">
@@ -35,6 +35,11 @@
                         <%= link_to  edit_booking_path(booking[:id]), { turbo_method: :edit, confirm: "Are you sure?" }  do %>
                           <i class="fa-solid fa-pen" style="color: #000000;"></i>
                           <% end %>
+                      </div>
+                      <div class="mt-4">
+                        <%= link_to new_booking_review_path(booking[:id]) do %>
+                        <i class="fa-solid fa-star" style="color: #000000;"></i>
+                      <% end %>
                       </div>
                     </div>
                   </div>
