@@ -1,7 +1,7 @@
 .checkout-wrapper {
   height: 100vh;
   width: 100%;
-  background-color: #b5a4a4;
+  background-color: #56CCF2;
 }
 
 .checkout-container {
@@ -11,7 +11,7 @@
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #ffc966;
+  background-color:#FFFFFF;
   padding: 35px 10px;
   border-radius: 10px;
   display: flex;
@@ -22,6 +22,8 @@
   border: 1px solid rgba($color: #ec590a, $alpha: 0.3);
   box-shadow: rgba(236, 89, 10, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   color: #5e5656 !important;
+  border-color: #FFEEB1;
+  border-width: 15px;
 
   .checkout-title {
     font-size: 30px;
