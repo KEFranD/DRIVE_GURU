@@ -27,7 +27,7 @@
     <div class="justify-content-center">
       <% @instructors.each do |instructor| %>
         <div class="col-sm-6 col-md-4">
-          <a href="<%= instructor_path(instructor) %>">
+          <a href="<%= instructor_path(instructor) %>", style="text-decoration:none">
             <div class="card instructor-card" style="background-image: url('https://res.cloudinary.com/dujnrrugq/image/upload/v1686654090/instructor_card_big_lnynfz.png')">
               <% if instructor.photo.attached? %>
                 <%= cl_image_tag instructor.photo.key, class: 'card-img-top instructor-image' %>
@@ -36,7 +36,7 @@
               <% end %>
               <div class="card-body">
                 <h4 class="card-title text-center"><%= instructor.company_name %></h4>
-                <p class="text-title text-center address"><%= instructor.address %></p>
+                <p class="text-title text-center", style="font-weight:bold; margin-bottom:-7px;"><%= instructor.address %></p>
               </div>
             </div>
           </a>
